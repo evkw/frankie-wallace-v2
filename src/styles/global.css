@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&family=Quicksand:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+
+  --font-header: "Quicksand", sans-serif; 
+  --font-body: "Nunito", sans-serif; 
+  --font-accent: "Pinyon Script", cursive;
+
+}

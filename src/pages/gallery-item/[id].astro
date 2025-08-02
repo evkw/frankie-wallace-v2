@@ -1,0 +1,191 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getAllGalleryItems } from "../../lib/gallery-data";
+
+export async function getStaticPaths() {
+  // Get all gallery data
+  const allItems = await getAllGalleryItems();
+
+  // Generate paths for each item
+  return allItems.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+// Get the item from props
+const { item } = Astro.props;
+
+// Create item data structure
+const itemData = {
+  id: item.id,
+  title: item.title,
+  description:
+    "This is a beautiful hand-painted illustration created with care and attention to detail. Each piece is crafted using traditional watercolor techniques combined with digital refinement.",
+  image: item.image,
+  imageAlt: item.imageAlt,
+  category:
+    item.category === "childrensIllustration"
+      ? "Children's Book Illustration"
+      : item.category === "weddingIllustration"
+        ? "Wedding Illustration"
+        : "Surface Pattern Design",
+  techniques: ["Watercolor", "Digital Refinement", "Hand-drawn"],
+  dimensions: "A4",
+  year: "2024",
+};
+---
+
+<Layout>
+  <div class="bg-gray-50 min-h-screen">
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+      <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+        <nav class="flex" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a
+                href="/gallery"
+                class="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                Gallery
+              </a>
+            </li>
+            <li>
+              <svg
+                class="flex-shrink-0 h-5 w-5 text-gray-300"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </li>
+            <li class="text-gray-900 font-medium">
+              {itemData.title}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Image Section -->
+        <div class="space-y-6">
+          <div
+            class="aspect-square bg-white rounded-lg shadow-sm overflow-hidden"
+          >
+            <img
+              src={itemData.image}
+              alt={itemData.imageAlt}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Thumbnail Gallery (placeholder for future) -->
+          <div class="grid grid-cols-4 gap-4">
+            <div class="aspect-square bg-gray-200 rounded-lg"></div>
+            <div class="aspect-square bg-gray-200 rounded-lg"></div>
+            <div class="aspect-square bg-gray-200 rounded-lg"></div>
+            <div class="aspect-square bg-gray-200 rounded-lg"></div>
+          </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="space-y-8">
+          <div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">
+              {itemData.title}
+            </h1>
+            <p class="text-lg text-gray-600 mb-4">
+              {itemData.category}
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              {itemData.description}
+            </p>
+          </div>
+
+          <!-- Details Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <h3
+                class="text-sm font-medium text-gray-500 uppercase tracking-wide"
+              >
+                Techniques
+              </h3>
+              <div class="mt-2 flex flex-wrap gap-2">
+                {
+                  itemData.techniques.map((technique) => (
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                      {technique}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-medium text-gray-500 uppercase tracking-wide"
+              >
+                Dimensions
+              </h3>
+              <p class="mt-2 text-gray-900">{itemData.dimensions}</p>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-medium text-gray-500 uppercase tracking-wide"
+              >
+                Year
+              </h3>
+              <p class="mt-2 text-gray-900">{itemData.year}</p>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-medium text-gray-500 uppercase tracking-wide"
+              >
+                Category
+              </h3>
+              <p class="mt-2 text-gray-900">{itemData.category}</p>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div
+            class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200"
+          >
+            <button
+              class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+            >
+              Inquire About Commission
+            </button>
+            <button
+              class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+            >
+              Download High Res
+            </button>
+          </div>
+
+          <!-- Related Works -->
+          <div class="pt-8 border-t border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+              Related Works
+            </h3>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="aspect-square bg-gray-200 rounded-lg"></div>
+              <div class="aspect-square bg-gray-200 rounded-lg"></div>
+              <div class="aspect-square bg-gray-200 rounded-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+

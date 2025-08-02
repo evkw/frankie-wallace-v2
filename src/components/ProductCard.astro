@@ -1,0 +1,8 @@
+---
+const { product } = Astro.props;
+---
+<div class="border p-4 rounded shadow">
+  <h2>{product.attributes.name}</h2>
+  <p>{product.attributes.description}</p>
+  <a href={`https://${product.attributes.buy_now_url}`} class="btn">Buy Now</a>
+</div>

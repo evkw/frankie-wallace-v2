@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BambooGridSmall from "../components/portfolio/BambooGridSmall.astro";
+import BambooGridLarge from "../components/portfolio/BambooGridLarge.astro";
+---
+
+<Layout>
+  <div class="bg-gray-50">
+    <div class="mx-auto w-full">
+      <div aria-hidden="true" class="relative">
+        <img
+          src="/portfolio-hero.avif"
+          class="h-64 sm:h-96 w-full object-cover object-[0_10%]"
+        />
+        <div class="absolute inset-0 bg-linear-to-t from-white"></div>
+      </div>
+
+      <div
+        class="relative mx-auto -mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8"
+      >
+        <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
+          <img
+            src="/Frankie-logo-dark.avif"
+            alt="Frankie Logo"
+            class="mx-auto h-16 sm:h-24 w-auto mb-4"
+          />
+          <p class="text-xl font-semibold text-gray-800 mb-2">
+            Illustrator &amp; Surface Pattern Designer
+          </p>
+          <p class="mt-4 text-lg text-gray-600">
+            Gentle, nostalgic designs for childrens clothing, books, and quiet
+            spaces
+          </p>
+        </div>
+        <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+          <BambooGridLarge
+            title="Surface Pattern Design"
+            subtitle="Soft, whimsical patterns, hand-drawn with watercolours and Adobe Fresco. Perfect for children's apparel and textiles. Click on the images to explore each collection and project."
+            image="/pattern-1.avif"
+            viewMoreLink="/gallery/surfacePattern"
+            imageAlt="Surface pattern design examples"
+          />
+          <div class="relative max-lg:row-start-1">
+            <div
+              class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-4xl"
+            >
+            </div>
+            <BambooGridSmall
+              title="Wedding Stationery"
+              subtitle="Hand-painted watercolours, fine line botanical illustrations and thoughtfully curated typography. I specialise in botanical and venue watercolour illustration for wedding stationery, bringing a romantic, timeless feel to each piece."
+              image="/wedding-stationary.avif"
+              imageAlt="Wedding stationery illustration"
+              viewMoreLink="/gallery/weddingStationery"
+            />
+            <div
+              class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl"
+            >
+            </div>
+          </div>
+          <div
+            class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2"
+          >
+            <div class="absolute inset-px rounded-lg bg-white"></div>
+            <BambooGridSmall
+              title="Live Wedding Illustration"
+              subtitle="Live wedding illustration is a unique and beautiful way of capturing a precious moment from your ceremony or reception, exchanging vows, or your first dance. A heartfelt keepsake to treasure forever."
+              image="/live-wedding.avif"
+              viewMoreLink="/gallery/weddingIllustration"
+              imageAlt="Live wedding illustration"
+            />
+            <div
+              class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5"
+            >
+            </div>
+          </div>
+          <BambooGridLarge
+            title="Children's Book Illustration"
+            subtitle="I bring whimsical stories to life with soft, hand-painted illustrations full of heart and nature. Now taking new illustration commissions."
+            image="/bella-bee.avif"
+            viewMoreLink="/gallery/childrensIllustration"
+            imageAlt="Children's book illustration example"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
