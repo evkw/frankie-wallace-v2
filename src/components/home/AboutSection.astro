@@ -1,5 +1,7 @@
 ---
 // AboutSection component for the final section with fairytale art description
+import { Image } from 'astro:assets';
+import aboutImage from '../../data/images/about.avif';
 ---
 
 <div class="bg-gray-50 py-20">
@@ -24,8 +26,8 @@
     </div>
     <!-- Image -->
     <div class="w-full lg:w-1/2 flex justify-center">
-      <img
-        src="/about.avif"
+      <Image
+        src={aboutImage}
         alt="Frankie Wallace Fairytale Art"
         class="rounded-lg shadow-lg max-w-full h-auto"
       />

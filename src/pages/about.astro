@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import aboutHeroImage from '../data/images/about-hero.avif';
 ---
 
 <Layout>
   <section class="relative w-full">
-    <img
-      src="/about-hero.avif"
+    <Image
+      src={aboutHeroImage}
       alt="Frankie Wallace About Banner"
       class="w-full h-80 md:h-[30rem] object-cover rounded-lg shadow mb-10"
     />

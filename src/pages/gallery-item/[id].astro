@@ -1,10 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getAllGalleryItems } from "../../lib/gallery-data";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   // Get all gallery data
-  const allItems = await getAllGalleryItems();
+  const allItems = await getCollection("gallery");
 
   // Generate paths for each item
   return allItems.map((item) => ({
@@ -19,20 +19,20 @@ const { item } = Astro.props;
 // Create item data structure
 const itemData = {
   id: item.id,
-  title: item.title,
-  description:
-    "This is a beautiful hand-painted illustration created with care and attention to detail. Each piece is crafted using traditional watercolor techniques combined with digital refinement.",
-  image: item.image,
-  imageAlt: item.imageAlt,
+  title: item.data.title,
+  description: item.data.description,
+  image: item.data.image.src,
+  imageAlt: item.data.image.alt,
+  allImages: [item.data.image].concat(item.data.additionalImages),
   category:
-    item.category === "childrensIllustration"
+    item.data.category === "childrensIllustration"
       ? "Children's Book Illustration"
-      : item.category === "weddingIllustration"
+      : item.data.category === "weddingIllustration"
         ? "Wedding Illustration"
         : "Surface Pattern Design",
   techniques: ["Watercolor", "Digital Refinement", "Hand-drawn"],
   dimensions: "A4",
-  year: "2024",
+  year: item.data.created,
 };
 ---
 
@@ -44,12 +44,12 @@ const itemData = {
         <nav class="flex" aria-label="Breadcrumb">
           <ol class="flex items-center space-x-4">
             <li>
-              <a
-                href="/gallery"
-                class="text-gray-500 hover:text-gray-700 transition-colors"
+              <button
+                onclick="history.back()"
+                class="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
               >
-                Gallery
-              </a>
+                Back to Portfolio
+              </button>
             </li>
             <li>
               <svg
@@ -80,18 +80,31 @@ const itemData = {
             class="aspect-square bg-white rounded-lg shadow-sm overflow-hidden"
           >
             <img
+              id="main-image"
               src={itemData.image}
               alt={itemData.imageAlt}
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover transition-opacity duration-300"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
-          <!-- Thumbnail Gallery (placeholder for future) -->
+          <!-- Thumbnail Gallery -->
           <div class="grid grid-cols-4 gap-4">
-            <div class="aspect-square bg-gray-200 rounded-lg"></div>
-            <div class="aspect-square bg-gray-200 rounded-lg"></div>
-            <div class="aspect-square bg-gray-200 rounded-lg"></div>
-            <div class="aspect-square bg-gray-200 rounded-lg"></div>
+            {
+              itemData.allImages.map((image, index) => (
+                <div 
+                  class="aspect-square bg-gray-200 rounded-lg cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-200 border-2 border-transparent hover:border-gray-400"
+                  onclick={`switchImage('${image.src}', '${image.alt}')`}
+                >
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    class="w-full h-full object-cover rounded-lg" 
+                  />
+                </div>
+              ))
+            }
           </div>
         </div>
 
@@ -165,11 +178,6 @@ const itemData = {
             >
               Inquire About Commission
             </button>
-            <button
-              class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-            >
-              Download High Res
-            </button>
           </div>
 
           <!-- Related Works -->
@@ -187,5 +195,23 @@ const itemData = {
       </div>
     </div>
   </div>
+
+  <script is:inline>
+    function switchImage(src, alt) {
+      console.warn(src, alt);
+      const mainImage = document.getElementById('main-image');
+      if (mainImage) {
+        // Add fade out effect
+        mainImage.style.opacity = '0';
+        
+        // Switch image after fade out
+        setTimeout(() => {
+          mainImage.src = src;
+          mainImage.alt = alt;
+          mainImage.style.opacity = '1';
+        }, 150);
+      }
+    }
+  </script>
 </Layout>
 

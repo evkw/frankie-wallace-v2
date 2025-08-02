@@ -1,5 +1,8 @@
 ---
 // SurfacePatternSection component for the pattern design details
+import { Image } from 'astro:assets';
+import pattern1Image from '../../data/images/pattern-1.avif';
+import pattern2Image from '../../data/images/pattern-2.avif';
 ---
 
 <div class="bg-gray-50">
@@ -23,8 +26,9 @@
 
       <div class="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
         <div>
-          <img
-            src="/pattern-1.avif"
+          <Image
+            src={pattern1Image}
+            alt="Surface pattern design 1"
             class="aspect-3/2 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
           />
           <p class="mt-8 text-base text-gray-500">
@@ -34,8 +38,9 @@
           </p>
         </div>
         <div>
-          <img
-            src="/pattern-2.avif"
+          <Image
+            src={pattern2Image}
+            alt="Surface pattern design 2"
             class="aspect-3/2 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
           />
           <p class="mt-8 text-base text-gray-500">

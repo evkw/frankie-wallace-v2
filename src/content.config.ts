@@ -6,8 +6,16 @@ const gallery = defineCollection({
   schema: z.object({
     id: z.string(),
     title: z.string(),
-    image: z.string(),
-    imageAlt: z.string(),
+    description: z.string(),
+    created: z.string(),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    additionalImages: z.array(z.object({
+      src: z.string(),
+      alt: z.string(),
+    })),
     category: z.enum(['childrensIllustration', 'weddingIllustration', 'surfacePattern', 'weddingStationery']),
   }),
 });

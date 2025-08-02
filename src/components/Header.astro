@@ -1,5 +1,7 @@
 ---
 import Banner from './Banner.astro';
+import { Image } from 'astro:assets';
+import logoImage from '../data/images/logo.avif';
 ---
 
 <div class="bg-white">
@@ -43,8 +45,8 @@ import Banner from './Banner.astro';
           </div>
 
           <div class="space-y-6 border-t border-gray-200 px-4 py-6">
-            <img
-              src="/logo.avif"
+            <Image
+              src={logoImage}
               alt="Frankie Wallace Logo"
               class="h-24 w-auto"
             />
@@ -102,8 +104,8 @@ import Banner from './Banner.astro';
               <!-- Logo (lg+) -->
               <div class="hidden lg:flex lg:items-center">
                 <a href="/">
-                  <img
-                    src="/logo.avif"
+                  <Image
+                    src={logoImage}
                     alt="Frankie Wallace Logo"
                     class="h-24 w-auto"
                   />
@@ -177,8 +179,8 @@ import Banner from './Banner.astro';
 
                <div class="flex-3 flex justify-center lg:hidden">
                 <a href="/">
-                  <img
-                    src="/logo.avif"
+                  <Image
+                    src={logoImage}
                     alt="Frankie Wallace Logo"
                     class="h-16 w-auto lg:h-24 transition-all duration-200"
                   />

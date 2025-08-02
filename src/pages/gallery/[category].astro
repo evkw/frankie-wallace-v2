@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image } from 'astro:assets';
 import { getCollection } from "astro:content";
 const { category } = Astro.params;
 
@@ -60,9 +61,11 @@ const pageTitle =
             >
               <div class="aspect-square overflow-hidden">
                 <img
-                  src={item.data.image}
-                  alt={item.data.imageAlt}
+                  src={item.data.image.src}
+                  alt={item.data.image.alt}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-4">

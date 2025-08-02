@@ -1,8 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   title: string;
   subtitle: string;
-  image: string;
+  image: ImageMetadata;
   imageAlt?: string;
   viewMoreLink?: string;
 }
@@ -32,7 +35,7 @@ const { title, subtitle, image, imageAlt = "", viewMoreLink } = Astro.props;
       </a>
     </div>
     <div class="flex flex-1 items-end justify-center w-full">
-      <img
+      <Image
         src={image}
         alt={imageAlt}
         class="w-full h-52 object-cover"

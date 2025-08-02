@@ -1,8 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   title: string;
   subtitle: string;
-  image: string;
+  image: ImageMetadata;
   viewMoreLink: string;
   imageAlt?: string;
   imageClasses?: string;
@@ -51,7 +54,7 @@ const {
         <div
           class="absolute top-10 right-0 bottom-0 overflow-hidden bg-gray-900 shadow-2xl outline outline-white/10"
         >
-          <img
+          <Image
             src={image}
             alt={imageAlt}
             class={imageClasses}
