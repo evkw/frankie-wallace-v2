@@ -1,0 +1,90 @@
+---
+import Button from '../components/Button.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="bg-gray-50 flex flex-col items-center justify-center min-h-[80vh] py-10">
+    <h1 class="text-3xl font-semibold mb-6 font-header text-center">Licensing Inquiry</h1>
+    <form action="https://formspree.io/f/mkgzkbzp" method="POST" class="space-y-6 max-w-2xl w-full font-body bg-white p-8 rounded shadow-md">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block font-medium">Name <span class="text-red-500">*</span></label>
+          <input type="text" name="name" id="name" required class="w-full border rounded px-3 py-2 mt-1" />
+        </div>
+
+        <div>
+          <label for="email" class="block font-medium">Email <span class="text-red-500">*</span></label>
+          <input type="email" name="email" id="email" required class="w-full border rounded px-3 py-2 mt-1" />
+        </div>
+      </div>
+
+      <div>
+        <label for="businessName" class="block font-medium">Business Name <span class="text-red-500">*</span></label>
+        <input type="text" name="businessName" id="businessName" required class="w-full border rounded px-3 py-2 mt-1" />
+      </div>
+
+      <div>
+        <label for="businessType" class="block font-medium">What type of business will you be licensing the design for?</label>
+        <input type="text" name="businessType" id="businessType" class="w-full border rounded px-3 py-2 mt-1" placeholder="e.g., Apparel, Home Decor, Stationery" />
+      </div>
+
+      <div>
+        <label for="message" class="block font-medium">Message <span class="text-red-500">*</span></label>
+        <textarea name="message" id="message" rows="4" required class="w-full border rounded px-3 py-2 mt-1" placeholder="Tell us about your project and how you plan to use the design..."></textarea>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="licenseLength" class="block font-medium">License Length</label>
+          <select name="licenseLength" id="licenseLength" class="w-full border rounded px-3 py-2 mt-1">
+            <option value="">Select license length</option>
+            <option value="1-year">1 Year</option>
+            <option value="2-years">2 Years</option>
+            <option value="not-sure">Not Sure</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="licensePreference" class="block font-medium">License Preference</label>
+          <select name="licensePreference" id="licensePreference" class="w-full border rounded px-3 py-2 mt-1">
+            <option value="">Select license type</option>
+            <option value="non-exclusive">Non-exclusive</option>
+            <option value="exclusive">Exclusive</option>
+            <option value="not-sure">Not Sure</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="licenseCategory" class="block font-medium">License Category</label>
+        <input type="text" name="licenseCategory" id="licenseCategory" class="w-full border rounded px-3 py-2 mt-1" placeholder="e.g., Commercial, Editorial, Personal Use" />
+      </div>
+
+      <div>
+        <label for="units" class="block font-medium">Units - How many units do you expect to print per design?</label>
+        <input type="text" name="units" id="units" class="w-full border rounded px-3 py-2 mt-1" placeholder="e.g., 1000-1500" />
+      </div>
+
+      <div>
+        <label for="websiteSocial" class="block font-medium">Website and/or Social Media <span class="text-red-500">*</span></label>
+        <input type="text" name="websiteSocial" id="websiteSocial" required class="w-full border rounded px-3 py-2 mt-1" placeholder="e.g., www.yourbusiness.com, @yourbusiness" />
+      </div>
+
+      <div>
+        <label for="printingMethod" class="block font-medium">Printing Method</label>
+        <input type="text" name="printingMethod" id="printingMethod" class="w-full border rounded px-3 py-2 mt-1" placeholder="e.g., Digital, Screen Print, Offset" />
+      </div>
+
+      <Button type="submit" class="px-6 py-2 w-full">
+        Submit Licensing Inquiry
+      </Button>
+
+      <p class="text-center text-gray-600 mt-4">
+        Thank you for your enquiry! I will respond within 1-3 business days.
+      </p>
+
+    </form>
+  </div>
+</Layout>

@@ -1,4 +1,5 @@
 ---
+import Button from "../../components/Button.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -29,9 +30,9 @@ const itemData = {
       ? "Children's Book Illustration"
       : item.data.category === "weddingIllustration"
         ? "Wedding Illustration"
-        : "Surface Pattern Design",
-  techniques: ["Watercolor", "Digital Refinement", "Hand-drawn"],
-  dimensions: "A4",
+        : "Seamless Repeat Pattern Collection",
+  techniques: item.data.techniques,
+  license: item.data.license === 'non-exclusive' ? "Non-exclusive commercial license for 1 year. Need extended terms or exclusive rights? Just send me a message!" : "Exclusive commercial license for 1 year",
   year: item.data.created,
 };
 ---
@@ -112,7 +113,7 @@ const itemData = {
         <div class="space-y-8">
           <div>
             <h1 class="text-3xl font-bold text-gray-900 mb-2">
-              {itemData.title}
+              {item.data.title}
             </h1>
             <p class="text-lg text-gray-600 mb-4">
               {itemData.category}
@@ -128,7 +129,7 @@ const itemData = {
               <h3
                 class="text-sm font-medium text-gray-500 uppercase tracking-wide"
               >
-                Techniques
+                Patterns & Techniques
               </h3>
               <div class="mt-2 flex flex-wrap gap-2">
                 {
@@ -145,42 +146,42 @@ const itemData = {
               <h3
                 class="text-sm font-medium text-gray-500 uppercase tracking-wide"
               >
-                Dimensions
+                Tags
               </h3>
-              <p class="mt-2 text-gray-900">{itemData.dimensions}</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                {
+                  item.data.tags.map((tag) => (
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                      {tag}
+                    </span>
+                  ))
+                }
+              </div>
             </div>
 
             <div>
               <h3
                 class="text-sm font-medium text-gray-500 uppercase tracking-wide"
               >
-                Year
+                License
               </h3>
-              <p class="mt-2 text-gray-900">{itemData.year}</p>
+              <p class="mt-2 text-gray-900">{itemData.license}</p>
             </div>
 
-            <div>
-              <h3
-                class="text-sm font-medium text-gray-500 uppercase tracking-wide"
-              >
-                Category
-              </h3>
-              <p class="mt-2 text-gray-900">{itemData.category}</p>
-            </div>
+
           </div>
 
           <!-- Action Buttons -->
           <div
             class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200"
           >
-            <button
-              class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
-            >
-              Inquire About Commission
-            </button>
+
+          <Button href="/licensing" class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+            Enquire about licensing
+          </Button>
           </div>
 
-          <!-- Related Works -->
+          <!-- Related Works 
           <div class="pt-8 border-t border-gray-200">
             <h3 class="text-lg font-semibold text-gray-900 mb-4">
               Related Works
@@ -190,7 +191,7 @@ const itemData = {
               <div class="aspect-square bg-gray-200 rounded-lg"></div>
               <div class="aspect-square bg-gray-200 rounded-lg"></div>
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>

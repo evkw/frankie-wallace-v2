@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import Button from '../Button.astro';
 
 interface Props {
   title: string;
@@ -43,12 +44,9 @@ const {
         {subtitle}
       </p>
 
-      <a
-        href={viewMoreLink}
-        class="bg-black text-white font-semibold px-6 py-2 my-6 rounded hover:bg-gray-800 transition block mx-auto text-center"
-      >
+      <Button href={viewMoreLink} class="my-6 mx-auto">
         View More
-      </a>
+      </Button>
     </div>
       <div class="relative min-h-120 w-full grow">
         <div

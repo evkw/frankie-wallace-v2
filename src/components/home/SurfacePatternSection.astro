@@ -1,8 +1,9 @@
 ---
 // SurfacePatternSection component for the pattern design details
-import { Image } from 'astro:assets';
-import pattern1Image from '../../data/images/pattern-1.avif';
-import pattern2Image from '../../data/images/pattern-2.avif';
+import { Image } from "astro:assets";
+import pattern1Image from "../../data/images/pattern-1.avif";
+import pattern2Image from "../../data/images/pattern-2.avif";
+import Button from "../Button.astro";
 ---
 
 <div class="bg-gray-50">
@@ -51,13 +52,13 @@ import pattern2Image from '../../data/images/pattern-2.avif';
           </p>
         </div>
       </div>
-      <a
+
+      <Button
         href="/pattern-library"
-        class="mt-8 mx-auto block bg-black text-white font-semibold px-6 py-3 rounded shadow hover:bg-gray-800 transition text-center w-max"
+        class="mt-8 mx-auto block font-semibold px-6 py-3 rounded shadow hover:bg-gray-800 transition text-center w-max"
       >
         View Pattern Library
-      </a>
+      </Button>
     </section>
   </div>
 </div>
-

@@ -1,0 +1,77 @@
+---
+import pattern1 from '../data/images/pattern-1.avif';
+
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  type?: 'button' | 'submit' | 'reset';
+  children: any;
+}
+
+const { 
+  href, 
+  variant = 'primary', 
+  size = 'md',
+  class: className = '',
+  type = 'button',
+} = Astro.props;
+
+const baseClasses = "font-semibold rounded transition-all duration-300 block text-center relative overflow-hidden";
+
+const variantClasses = {
+  primary: "bg-black text-black hover:bg-gray-800",
+  secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
+  outline: "border border-gray-300 text-gray-700 hover:bg-gray-50"
+};
+
+const sizeClasses = {
+  sm: "px-4 py-1.5 text-sm",
+  md: "px-6 py-2",
+  lg: "px-8 py-3 text-lg"
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+---
+
+<style>
+  .pattern-bg {
+    background-image: url('./images/bunny-bloom-additional-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  .pattern-bg:hover {
+    opacity: 1;
+  }
+  
+  .pattern-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+</style>
+
+{href ? (
+  <a href={href} class={`${classes} text-white`}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={`${classes} text-white`}>
+   <slot />
+  </button>
+)} 

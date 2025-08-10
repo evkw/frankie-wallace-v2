@@ -29,5 +29,8 @@
       "alt": "Bunny Bloom Easter 2"
     }
   ],
-  "category": "surfacePattern"
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": ["Floral", "Watercolor", "Hand-drawn"],
+  "tags": [ "Tonal", "Monochromatic", "Lemons", "Ditsy"]
 }

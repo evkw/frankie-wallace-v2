@@ -1,0 +1,37 @@
+{
+    "id": "bramble-house",
+    "title": "Bramble House",
+    "description": "A gentle, storybook-inspired pattern collection featuring forest creatures, floral vines, and gingham—designed for timeless children’s wear.",
+    "created": "Winter2025",
+    "image": {
+      "src": "/images/bramble-house/bramble-house-main.jpg",
+      "alt": "Bunny Bloom Easter"
+    },
+    "additionalImages": [
+      {
+        "src": "/images/bramble-house/bramble-house-1.jpg",
+        "alt": "Bunny Bloom Easter 2"   
+      },
+      {
+        "src": "/images/bramble-house/bramble-house-2.jpg",
+        "alt": "Bunny Bloom Easter 2"
+      },
+      {
+        "src": "/images/bramble-house/bramble-house-3.jpg",
+        "alt": "Bunny Bloom Easter 2"
+      },
+      {
+        "src": "/images/bramble-house/bramble-house-4.jpg",
+        "alt": "Bunny Bloom Easter 2"
+      },
+      {
+        "src": "/images/bramble-house/bramble-house-5.jpg",
+        "alt": "Bunny Bloom Easter 2"
+      }
+    ],
+    "category": "surfacePattern",
+    "license": "non-exclusive",
+    "techniques": ["Floral", "Watercolor", "Hand-drawn"],
+    "tags": [ "Tonal", "Monochromatic", "Lemons", "Ditsy"]
+  }
+  

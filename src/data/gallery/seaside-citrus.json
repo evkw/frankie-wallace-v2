@@ -1,0 +1,37 @@
+{
+  "id": "seaside-citrus",
+  "title": "Seaside Citrus",
+  "description": "A gentle blend of cottage nostalgia and tropical ease, Coastal Orchard captures sun‑washed summer days by the sea. Hand‑painted grapefruits, lemons, pineapples, seashells, and vintage parasols evoke slow holidays spent sketching under palm shadows. Soft blush, sandy neutrals, and faded ocean blues create a palette that feels both fresh and timeless — perfect for heirloom-inspired apparel, children’s wear, or delicate home textiles.",
+  "created": "Winter2025",
+  "image": {
+    "src": "/images/seaside-citrus/seaside-citrus-main.jpg",
+    "alt": "Seaside Citrus Pattern"
+  },
+
+  "additionalImages": [
+    {
+      "src": "/images/seaside-citrus/seaside-citrus-1.jpg",
+      "alt": "Seaside Citrus Pattern 1"
+    },
+    {
+      "src": "/images/seaside-citrus/seaside-citrus-2.jpg",
+      "alt": "Seaside Citrus Pattern 2"
+    },
+    {
+      "src": "/images/seaside-citrus/seaside-citrus-3.jpg",
+      "alt": "Seaside Citrus Pattern 3"
+    },
+    {
+      "src": "/images/seaside-citrus/seaside-citrus-4.jpg",
+      "alt": "Seaside Citrus Pattern 4"
+    },
+    {
+      "src": "/images/seaside-citrus/seaside-citrus-5.jpg",
+      "alt": "Seaside Citrus Pattern 5"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": ["Floral", "Watercolor", "Hand-drawn"],
+  "tags": [ "Tonal", "Monochromatic", "Lemons", "Ditsy"]
+}

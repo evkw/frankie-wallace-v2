@@ -1,12 +1,13 @@
 ---
 import Banner from './Banner.astro';
 import { Image } from 'astro:assets';
-import logoImage from '../data/images/logo.avif';
+import logoImage from '../data/images/Frankie-logo-dark.avif';
+import { getActiveRoutes } from '../config/navigation';
 ---
 
 <div class="bg-white">
-  <!-- Banner -->
-  <Banner />
+  <!-- <Banner /> -->
+  
   
   <!-- Mobile menu -->
   <el-dialog>
@@ -21,9 +22,8 @@ import logoImage from '../data/images/logo.avif';
           <div class="flex px-4 pt-5 pb-2">
             <button
               type="button"
-              command="close"
-              commandfor="mobile-menu"
               class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+              onclick="document.getElementById('mobile-menu').close()"
             >
               <span class="absolute -inset-0.5"></span>
               <span class="sr-only">Close menu</span>
@@ -48,46 +48,49 @@ import logoImage from '../data/images/logo.avif';
             <Image
               src={logoImage}
               alt="Frankie Wallace Logo"
-              class="h-24 w-auto"
+              class="h-24 w-auto object-contain"
             />
 
-            <div class="flow-root">
-              <a href="/" class="-m-2 block p-2 font-medium text-gray-900"
-                >Home</a
-              >
-            </div>
-            <!-- <div class="flow-root">
-              <a
-                href="/pattern-library"
-                class="-m-2 block p-2 font-medium text-gray-900"
-                >Pattern Library</a
-              >
-            </div> -->
-
-            <div class="flow-root">
-              <a
-                href="/portfolio"
-                class="-m-2 block p-2 font-medium text-gray-900">Portfolio</a
-              >
-            </div>
-            <div class="flow-root">
-              <a href="/about" class="-m-2 block p-2 font-medium text-gray-900"
-                >About</a
-              >
-            </div>
-
-            <div class="flow-root">
-              <a
-                href="/contact"
-                class="-m-2 block p-2 font-medium text-gray-900">Contact</a
-              >
-            </div>
-
-            <!-- <div class="flow-root">
-              <a href="/blog" class="-m-2 block p-2 font-medium text-gray-900"
-                >Blog</a
-              >
-            </div> -->
+            {getActiveRoutes().map((item) => (
+              <div class="flow-root">
+                {item.subItems && item.subItems.length > 0 ? (
+                  <div class="space-y-2">
+                    <button
+                      type="button"
+                      class="mobile-nav-toggle w-full text-left -m-2 block p-2 font-medium text-gray-900 flex items-center justify-between"
+                      data-target={`mobile-submenu-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      {item.label}
+                      <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </button>
+                    <div 
+                      id={`mobile-submenu-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                      class="mobile-submenu hidden pl-4 space-y-2"
+                    >
+                      {item.subItems.map((subItem) => (
+                        <a 
+                          href={subItem.href} 
+                          class="-m-2 block p-2 text-sm text-gray-600 hover:text-gray-900"
+                          {...(subItem.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+                        >
+                          {subItem.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <a 
+                    href={item.href} 
+                    class="-m-2 block p-2 font-medium text-gray-900"
+                    {...(item.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+                  >
+                    {item.label}
+                  </a>
+                )}
+              </div>
+            ))}
           </div>
         </el-dialog-panel>
       </div>
@@ -98,7 +101,7 @@ import logoImage from '../data/images/logo.avif';
     <nav aria-label="Top">
       <!-- Secondary navigation -->
       <div class="bg-white p-4 lg:p-8 flex justify-between items-center">
-        <div class="mx-auto max-w-7xl px-2 sm:px-2 lg:px-8">
+        <div class="lg:mx-auto max-w-7xl px-2 sm:px-2 lg:px-8">
           <div class="border-b border-gray-200">
             <div class="flex h-16 items-center justify-between">
               <!-- Logo (lg+) -->
@@ -107,47 +110,51 @@ import logoImage from '../data/images/logo.avif';
                   <Image
                     src={logoImage}
                     alt="Frankie Wallace Logo"
-                    class="h-24 w-auto"
+                    class="h-24 w-auto object-contain"
                   />
                 </a>
               </div>
 
               <div class="hidden h-full lg:flex">
                 <div class="flex h-full justify-center space-x-8">
-                  <a
-                    href="/"
-                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >Home</a
-                  >
-                  <!-- <a
-                    href="/pattern-library"
-                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >Pattern Library</a
-                  > -->
-
-                  <a
-                    href="/portfolio"
-                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >Portfolio</a
-                  >
-
-                  <a
-                    href="/about"
-                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >About</a
-                  >
-
-                  <a
-                    href="/contact"
-                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >Contact</a
-                  >
-
-                                    <!-- <a
-                    href="/blog"
-                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >Blog</a
-                  > -->
+                  {getActiveRoutes().map((item) => (
+                    <div class="relative group">
+                      {item.subItems && item.subItems.length > 0 ? (
+                        <div class="relative">
+                          <button
+                            type="button"
+                            class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 py-2"
+                          >
+                            {item.label}
+                            <svg class="ml-1 w-4 h-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                          </button>
+                          <div class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                              {item.subItems.map((subItem) => (
+                                <a
+                                  href={subItem.href}
+                                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                                  {...(subItem.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+                                >
+                                  {subItem.label}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <a
+                          href={item.href}
+                          class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 py-2"
+                          {...(item.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+                        >
+                          {item.label}
+                        </a>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -155,9 +162,8 @@ import logoImage from '../data/images/logo.avif';
               <div class="flex flex-1 items-center lg:hidden">
                 <button
                   type="button"
-                  command="show-modal"
-                  commandfor="mobile-menu"
                   class="-ml-2 rounded-md bg-white p-2 text-gray-400"
+                  onclick="document.getElementById('mobile-menu').showModal()"
                 >
                   <span class="sr-only">Open menu</span>
                   <svg
@@ -182,7 +188,7 @@ import logoImage from '../data/images/logo.avif';
                   <Image
                     src={logoImage}
                     alt="Frankie Wallace Logo"
-                    class="h-16 w-auto lg:h-24 transition-all duration-200"
+                    class="h-16 w-auto lg:h-24 transition-all duration-200 object-contain"
                   />
                 </a>
               </div>
@@ -227,3 +233,30 @@ import logoImage from '../data/images/logo.avif';
     src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
     type="module"></script>
 </div>
+
+<script>
+  // Extend HTMLButtonElement to include custom attributes
+  interface HTMLButtonElement {
+    command?: string;
+    commandfor?: string;
+  }
+
+  // Mobile navigation submenu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileNavToggles = document.querySelectorAll('.mobile-nav-toggle');
+    
+    mobileNavToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(event: Event) {
+        const button = event.currentTarget as HTMLElement;
+        const targetId = button.getAttribute('data-target');
+        const submenu = document.getElementById(targetId!);
+        const icon = button.querySelector('svg');
+        
+        if (submenu && icon) {
+          submenu.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        }
+      });
+    });
+  });
+</script>

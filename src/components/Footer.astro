@@ -1,6 +1,45 @@
-<footer class="bg-gray-100 p-6 text-center text-sm mt-12 font-body">
-  <p>&copy; {new Date().getFullYear()} Frankie Wallace. All rights reserved.</p>
-  <p class="mt-2">
-    <a href="mailto:hello@frankiewallace.com.au" class="underline">hello@frankiewallace.com.au</a>
-  </p>
+---
+import { getActiveRoutes, getActiveSocialMedia } from '../config/navigation';
+import duckImage from '../data/images/duck.avif';
+
+const navigationItems = getActiveRoutes();
+const socialMediaItems = getActiveSocialMedia();
+---
+
+<footer class="bg-white">
+  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
+      <!-- Left side with duck image -->
+      <div class="flex-shrink-0 flex justify-center lg:justify-start">
+        <img 
+          src={duckImage.src} 
+          alt="Decorative duck illustration" 
+          class="w-32 h-32 object-contain"
+        />
+      </div>
+      
+      <!-- Right side with navigation and social links -->
+      <div class="flex-1">
+        <nav aria-label="Footer" class="-mb-6 flex flex-wrap justify-center lg:justify-end gap-x-12 gap-y-3 text-sm/6">
+          {navigationItems.map((item) => (
+            <a href={item.href} class="text-body text-gray-600 hover:text-gray-900" target={item.isExternal ? '_blank' : undefined} rel={item.isExternal ? 'noopener noreferrer' : undefined}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div class="mt-16 flex justify-center lg:justify-end gap-x-10">
+          {socialMediaItems.map((social) => (
+            <a href={social.href} class="text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer">
+              <span class="sr-only">{social.label}</span>
+              <i class={social.icon}></i>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    <p class="mt-10 text-center text-sm/6 text-gray-600 text-body">&copy; {new Date().getFullYear()} Frankie Wallace. All rights reserved.</p>
+  </div>
 </footer>
+
+
+<script src="https://kit.fontawesome.com/b6dabf7fb2.js" crossorigin="anonymous"></script>
