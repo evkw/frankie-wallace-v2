@@ -27,11 +27,13 @@ import Button from "../Button.astro";
 
       <div class="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
         <div>
-          <Image
-            src={pattern1Image}
-            alt="Surface pattern design 1"
-            class="aspect-3/2 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
-          />
+          <a href="/gallery-item/duckling-days">
+            <Image
+              src={pattern1Image}
+              alt="Surface pattern design 1"
+              class="aspect-3/2 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </a>
           <p class="mt-8 text-base text-gray-500">
             Want any of my patterns in a different colourway? Or to have a
             custom design made? I'd love to hear from you! Send me an email at
@@ -39,11 +41,13 @@ import Button from "../Button.astro";
           </p>
         </div>
         <div>
-          <Image
-            src={pattern2Image}
-            alt="Surface pattern design 2"
-            class="aspect-3/2 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
-          />
+          <a href="/gallery-item/day-with-hedgie">
+            <Image
+              src={pattern2Image}
+              alt="Surface pattern design 2"
+              class="aspect-3/2 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </a>
           <p class="mt-8 text-base text-gray-500">
             Offering both custom pattern design and licensing options from her
             growing collection. Whether you're an art director, product
@@ -54,7 +58,7 @@ import Button from "../Button.astro";
       </div>
 
       <Button
-        href="/pattern-library"
+        href="/gallery/surfacePattern"
         class="mt-8 mx-auto block font-semibold px-6 py-3 rounded shadow hover:bg-gray-800 transition text-center w-max"
       >
         View Pattern Library

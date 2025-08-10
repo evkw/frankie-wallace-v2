@@ -15,7 +15,7 @@ export interface SocialMediaItem {
 }
 
 const formsConfig = {
-  
+
 }
 
 export const navigationConfig: NavigationItem[] = [
@@ -70,7 +70,7 @@ export const socialMediaConfig: SocialMediaItem[] = [
   {
     platform: 'instagram',
     label: 'Instagram',
-    href: 'https://www.instagram.com/lovefrankieart',
+    href: 'https://www.instagram.com/frankie.wallace_artist',
     icon: 'fa-brands fa-instagram',
     isActive: true
   },
@@ -84,23 +84,16 @@ export const socialMediaConfig: SocialMediaItem[] = [
   {
     platform: 'pinterest',
     label: 'Pinterest',
-    href: 'https://www.pinterest.com/lovefrankieart',
+    href: 'https://pinterest.com/lovefrankieartanddesigns/',
     icon: 'fa-brands fa-pinterest',
     isActive: true
   },
   {
     platform: 'facebook',
     label: 'Facebook',
-    href: 'https://www.facebook.com/lovefrankieart',
+    href: 'https://facebook.com/lovefrankieartanddesigns/',
     icon: 'fa-brands fa-facebook',
     isActive: true
-  },
-  {
-    platform: 'tiktok',
-    label: 'TikTok',
-    href: 'https://www.tiktok.com/@lovefrankieart',
-    icon: 'fa-brands fa-tiktok',
-    isActive: false
   }
 ];
 
