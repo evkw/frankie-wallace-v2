@@ -7,7 +7,6 @@ const gallery = defineCollection({
     id: z.string(),
     title: z.string(),
     description: z.string(),
-    created: z.string(),
     image: z.object({
       src: z.string(),
       alt: z.string(),

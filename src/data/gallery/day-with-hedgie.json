@@ -1,0 +1,53 @@
+{
+    "id": "day-with-hedgie",
+    "title": "A Day with Hedgie",
+    "description": "A Day with Hedgie is a soft, storybook-inspired collection featuring pastel lilies, bluebells, and garden blooms in blush, apricot, and periwinkle. Hand-drawn in pencil and digitally painted, this gentle print evokes whimsy, calm, and woodland charm.",
+    "image": {
+      "src": "/images/day-with-hedgie/day-with-hedgie-main.jpg",
+      "alt": "Day With Hedgie Pattern"
+    },
+  
+    "additionalImages": [
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-1.jpg",
+        "alt": "Day With Hedgie Pattern 1"
+      },
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-2.jpg",
+        "alt": "Day With Hedgie Pattern 2"
+      },
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-3.jpg",
+        "alt": "Day With Hedgie Pattern 3"
+      },
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-4.jpg",
+        "alt": "Day With Hedgie Pattern 4"
+      },
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-5.jpg",
+        "alt": "Day With Hedgie Pattern 5"
+      },
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-6.jpg",
+        "alt": "Day With Hedgie Pattern 6"
+      },
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-7.png",
+        "alt": "Day With Hedgie Pattern 7"
+      },
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-8.webp",
+        "alt": "Day With Hedgie Pattern 8"
+      },
+      {
+        "src": "/images/day-with-hedgie/day-with-hedgie-9.jpg",
+        "alt": "Day With Hedgie Pattern 9"
+      }
+    ],
+    "category": "surfacePattern",
+    "license": "non-exclusive",
+    "techniques": ["Floral", "Watercolor", "Hand-drawn"],
+    "tags": [ "Tonal", "Monochromatic", "Lemons", "Ditsy"]
+  }
+  
