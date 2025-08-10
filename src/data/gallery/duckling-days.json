@@ -1,0 +1,41 @@
+{
+    "id": "duckling-days",
+    "title": "Easter Collection - Duckling Days",
+    "description": "A sweet Easter fabric collection featuring hand-painted florals, baby ducklings, pastel gingham, and bunny ear motifs — perfect for spring sewing projects! Ideal for baby clothes, children’s Easter outfits, quilts, and handmade nursery decor. These soft, whimsical surface patterns are designed with a vintage-inspired color palette of blush, butter yellow, and dusty blue. A lovely choice for makers, fabric lovers, and children’s clothing brands looking for playful springtime prints.",
+    "image": {
+      "src": "/images/duckling-days/duckling-days-main.jpg",
+      "alt": "Duckling Days Pattern"
+    },
+  
+    "additionalImages": [
+      {
+        "src": "/images/duckling-days/duckling-days-1.png",
+        "alt": "Duckling Days Pattern 1"
+      },
+      {
+        "src": "/images/duckling-days/duckling-days-2.jpg",
+        "alt": "Duckling Days Pattern 2"
+      },
+      {
+        "src": "/images/duckling-days/duckling-days-3.jpg",
+        "alt": "Duckling Days Pattern 3"
+      },
+      {
+        "src": "/images/duckling-days/duckling-days-4.png",
+        "alt": "Duckling Days Pattern 4"
+      },
+      {
+        "src": "/images/duckling-days/duckling-days-5.jpg",
+        "alt": "Duckling Days Pattern 5"
+      },
+      {
+        "src": "/images/duckling-days/duckling-days-6.jpg",
+        "alt": "Duckling Days Pattern 6"
+      }
+    ],
+    "category": "surfacePattern",
+    "license": "non-exclusive",
+    "techniques": ["Floral", "Watercolor", "Hand-drawn"],
+    "tags": [ "Tonal", "Monochromatic", "Lemons", "Ditsy"]
+  }
+  
