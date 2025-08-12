@@ -1,6 +1,7 @@
 ---
 import Button from "../../components/Button.astro";
 import Layout from "../../layouts/Layout.astro";
+import NewsletterPopup from "../../components/NewsletterPopup.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -33,7 +34,7 @@ const itemData = {
         : "Seamless Repeat Pattern Collection",
   techniques: item.data.techniques,
   license: item.data.license === 'non-exclusive' ? "Non-exclusive commercial license for 1 year. Need extended terms or exclusive rights? Just send me a message!" : "Exclusive commercial license for 1 year",
-  year: item.data.created,
+
 };
 ---
 
@@ -146,23 +147,6 @@ const itemData = {
               <h3
                 class="text-sm font-medium text-gray-500 uppercase tracking-wide"
               >
-                Tags
-              </h3>
-              <div class="mt-2 flex flex-wrap gap-2">
-                {
-                  item.data.tags.map((tag) => (
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
-                      {tag}
-                    </span>
-                  ))
-                }
-              </div>
-            </div>
-
-            <div>
-              <h3
-                class="text-sm font-medium text-gray-500 uppercase tracking-wide"
-              >
                 License
               </h3>
               <p class="mt-2 text-gray-900">{itemData.license}</p>
@@ -196,6 +180,9 @@ const itemData = {
       </div>
     </div>
   </div>
+
+  <!-- Newsletter Popup -->
+  <NewsletterPopup />
 
   <script is:inline>
     function switchImage(src, alt) {

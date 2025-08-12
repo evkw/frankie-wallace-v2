@@ -1,0 +1,83 @@
+---
+import NewsletterSection from "./home/NewsletterSection.astro";
+---
+
+<div
+  id="newsletter-popup"
+  class="fixed inset-0 backdrop-blur z-50 hidden flex items-center justify-center p-4"
+>
+  <div class="bg-white shadow-xl mx-4 relative">
+    <!-- Close button -->
+    <button
+      id="close-popup"
+      class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+      aria-label="Close newsletter popup"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Content -->
+    <NewsletterSection />
+  </div>
+</div>
+
+<script>
+  // Newsletter popup functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("newsletter-popup");
+    const closeButton = document.getElementById("close-popup");
+
+    // Check if user has already closed the popup in this session
+    const hasClosedPopup = sessionStorage.getItem("newsletterPopupClosed");
+    if (!hasClosedPopup) {
+      // Show popup after a short delay
+      setTimeout(() => {
+        popup.classList.remove("hidden");
+        // Add fade-in animation
+        popup.style.opacity = "0";
+        popup.style.transition = "opacity 0.3s ease-in-out";
+        setTimeout(() => {
+          popup.style.opacity = "1";
+        }, 10);
+      }, 2000); // Show after 2 seconds
+    }
+    // Close popup functionality
+    function closePopup() {
+      popup.style.opacity = "0";
+      setTimeout(() => {
+        popup.classList.add("hidden");
+      }, 300);
+
+      // Mark as closed in session storage
+      sessionStorage.setItem("newsletterPopupClosed", "true");
+    }
+
+    // Close button click
+    closeButton.addEventListener("click", closePopup);
+
+    // Close on outside click
+    popup.addEventListener("click", function (e) {
+      if (e.target === popup) {
+        closePopup();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !popup.classList.contains("hidden")) {
+        closePopup();
+      }
+    });
+  });
+</script>
