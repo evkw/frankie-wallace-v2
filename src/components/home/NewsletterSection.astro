@@ -21,18 +21,25 @@ import newsletterImage from '../../data/images/EasterCardmockup.avif';
       <!-- Right side - Newsletter Form -->
       <div class="text-center lg:text-left">
         <h2 class="text-3xl font-bold font-header text-gray-900 mb-4">
-          Subscribe to get exclusive updates
+          Your Free Duckling Days Art Card
         </h2>
         <p class="text-lg text-gray-600 font-body mb-8">
-          Are you a baby and/or kids brand looking for beautiful, whimsical patterns
-          for your products? Subscribe to my newsletter to be the first to see my
-          latest designs and collections!
+          Sign up to my VIP mailing list and get your printable art card instantly — plus first looks at my new collections.
         </p>
         <form
           method="POST"
           action="https://formspree.io/f/xkgzkvww"
-          class="flex flex-col sm:flex-row gap-4 justify-center "
+          class="flex flex-col gap-4 justify-center "
         >
+
+        <input
+            type="text"
+            name="name"
+            required
+            placeholder="Your name"
+            class="w-full sm:w-auto px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+
           <input
             type="email"
             name="email"
