@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getActiveRoutes, getActiveSocialMedia } from '../config/navigation';
 import duckImage from '../data/images/duck.avif';
 
@@ -11,8 +12,8 @@ const socialMediaItems = getActiveSocialMedia();
     <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
       <!-- Left side with duck image -->
       <div class="flex-shrink-0 flex justify-center lg:justify-start">
-        <img 
-          src={duckImage.src} 
+        <Image 
+          src={duckImage} 
           alt="Decorative duck illustration" 
           class="w-32 h-32 object-contain"
         />

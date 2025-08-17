@@ -1,8 +1,17 @@
 ---
 import NewsletterSection from "../components/home/NewsletterSection.astro";
+import type { GTagProp } from "../data/models/tagProp.model";
 import Layout from "../layouts/Layout.astro";
+
+const tag: GTagProp = {
+  eventName: "newsletter_signup_completed",
+  props: {
+    event_category: "conversion",
+    event_label: "Newsletter Page",
+  },
+};
 ---
 
 <Layout>
-    <NewsletterSection />
+  <NewsletterSection tag={tag} />
 </Layout>

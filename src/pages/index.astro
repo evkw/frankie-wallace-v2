@@ -6,6 +6,15 @@ import NewsletterSection from "../components/home/NewsletterSection.astro";
 import BookIllustrationSection from "../components/home/BookIllustrationSection.astro";
 import AboutSection from "../components/home/AboutSection.astro";
 import "../styles/global.css";
+import type { GTagProp } from "../data/models/tagProp.model";
+
+const newsLetterTag: GTagProp = {
+  eventName: "newsletter_signup_completed",
+  props: {
+    event_category: "conversion",
+    event_label: "Newsletter Home",
+  },
+};
 ---
 
 <html lang="en">
@@ -21,7 +30,7 @@ import "../styles/global.css";
     <Layout>
       <HeroSection />
       <SurfacePatternSection />
-      <NewsletterSection />
+      <NewsletterSection tag={newsLetterTag}/>
       <BookIllustrationSection />
       <AboutSection />
     </Layout>

@@ -9,6 +9,19 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frankie Wallace</title>
+
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-PJ04EFYQLD"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "G-PJ04EFYQLD");
+    </script>
   </head>
   <body class="font-sans text-gray-900">
     <header id="site-header" class="transition-transform duration-300">
@@ -18,21 +31,5 @@ import "../styles/global.css";
       <slot />
     </main>
     <Footer />
-
-    <script>
-      let lastScroll = 0;
-      const header = document.getElementById("site-header");
-      window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset;
-        if (!header) return;
-        // Hide header on scroll down, show on scroll up
-        if (currentScroll > lastScroll && currentScroll > 50) {
-          header.style.transform = "translateY(-100%)";
-        } else {
-          header.style.transform = "translateY(0)";
-        }
-        lastScroll = currentScroll;
-      });
-    </script>
   </body>
 </html>
