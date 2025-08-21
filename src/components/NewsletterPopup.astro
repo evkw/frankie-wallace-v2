@@ -47,6 +47,11 @@ const newsLetterPopupTag: GTagProp = {
     const popup = document.getElementById("newsletter-popup");
     const closeButton = document.getElementById("close-popup");
 
+    if (window.innerHeight < 800) {
+      popup.classList.add("hidden");
+      return;
+    }
+
     // Check if user has already closed the popup in this session
     const hasClosedPopup = sessionStorage.getItem("newsletterPopupClosed");
     if (!hasClosedPopup) {
