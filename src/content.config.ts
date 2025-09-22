@@ -15,7 +15,7 @@ const gallery = defineCollection({
       src: z.string(),
       alt: z.string(),
     })),
-    category: z.enum(['childrensIllustration', 'weddingIllustration', 'surfacePattern', 'weddingStationery']),
+    category: z.string(),
     license: z.enum(['non-exclusive', 'exclusive']),
     techniques: z.array(z.string()),
     tags: z.array(z.string())

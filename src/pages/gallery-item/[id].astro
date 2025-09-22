@@ -26,12 +26,7 @@ const itemData = {
   image: item.data.image.src,
   imageAlt: item.data.image.alt,
   allImages: [item.data.image].concat(item.data.additionalImages),
-  category:
-    item.data.category === "childrensIllustration"
-      ? "Children's Book Illustration"
-      : item.data.category === "weddingIllustration"
-        ? "Wedding Illustration"
-        : "Seamless Repeat Pattern Collection",
+  category: item.data.category ?? "Seamless Repeat Pattern Collection",
   techniques: item.data.techniques,
   license: item.data.license === 'non-exclusive' ? "Non-exclusive commercial license for 1 year. Need extended terms or exclusive rights? Just send me a message!" : "Exclusive commercial license for 1 year",
 

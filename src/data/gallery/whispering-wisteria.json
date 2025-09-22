@@ -1,0 +1,67 @@
+{
+  "id": "whispering-wisteria",
+  "title": "Whispering Wisteria",
+  "description": "A gentle, vintage-inspired chinoiserie pattern collection featuring wisteria and coastal birds—designed for timeless children’s wallpaper, textiles, and clothing. Available in two colourways: sage and mauve.",
+  "image": {
+    "src": "/images/whispering-wisteria/whispering-wisteria-main.jpg",
+    "alt": "Whispering Wisteria Pattern"
+  },
+
+  "additionalImages": [
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-1.jpg",
+      "alt": "Whispering Wisteria Pattern 1"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-2.jpg",
+      "alt": "Whispering Wisteria Pattern 2"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-3.png",
+      "alt": "Whispering Wisteria Pattern 3"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-4.jpg",
+      "alt": "Whispering Wisteria Pattern 4"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-5.png",
+      "alt": "Whispering Wisteria Pattern 5"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-6.jpg",
+      "alt": "Whispering Wisteria Pattern 6"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-7.jpg",
+      "alt": "Whispering Wisteria Pattern 7"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-8.jpg",
+      "alt": "Whispering Wisteria Pattern 8"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-9.jpg",
+      "alt": "Whispering Wisteria Pattern 9"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-10.jpg",
+      "alt": "Whispering Wisteria Pattern 10"
+    },
+    {
+      "src": "/images/whispering-wisteria/whispering-wisteria-11.jpg",
+      "alt": "Whispering Wisteria Pattern 11"
+    }
+  ],
+  "category": "Seamless Repeat Pattern Collection, with mural",
+  "license": "non-exclusive",
+  "techniques": [
+    "Hand-drawn",
+    "Ogee",
+    "Stripe",
+    "Trellis",
+    "Chinoiserie",
+    "Watercolour"
+  ],
+  "tags": ["Tonal", "Monochromatic", "Lemons", "Ditsy"]
+}
