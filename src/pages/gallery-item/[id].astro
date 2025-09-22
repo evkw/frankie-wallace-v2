@@ -18,6 +18,13 @@ export async function getStaticPaths() {
 // Get the item from props
 const { item } = Astro.props;
 
+const defaultCategoryTitle =
+  item.data.category === "childrensIllustration"
+    ? "Children's Book Illustration"
+    : item.data.category === "weddingIllustration"
+      ? "Wedding Illustration"
+      : "Seamless Repeat Pattern Collection";
+
 // Create item data structure
 const itemData = {
   id: item.id,
@@ -26,10 +33,12 @@ const itemData = {
   image: item.data.image.src,
   imageAlt: item.data.image.alt,
   allImages: [item.data.image].concat(item.data.additionalImages),
-  category: item.data.category ?? "Seamless Repeat Pattern Collection",
+  category: item.data.categoryTitle ?? defaultCategoryTitle,
   techniques: item.data.techniques,
-  license: item.data.license === 'non-exclusive' ? "Non-exclusive commercial license for 1 year. Need extended terms or exclusive rights? Just send me a message!" : "Exclusive commercial license for 1 year",
-
+  license:
+    item.data.license === "non-exclusive"
+      ? "Non-exclusive commercial license for 1 year. Need extended terms or exclusive rights? Just send me a message!"
+      : "Exclusive commercial license for 1 year",
 };
 ---
 
@@ -90,14 +99,14 @@ const itemData = {
           <div class="grid grid-cols-4 gap-4">
             {
               itemData.allImages.map((image, index) => (
-                <div 
+                <div
                   class="aspect-square bg-gray-200 rounded-lg cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-200 border-2 border-transparent hover:border-gray-400"
                   onclick={`switchImage('${image.src}', '${image.alt}')`}
                 >
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    class="w-full h-full object-cover rounded-lg" 
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    class="w-full h-full object-cover rounded-lg"
                   />
                 </div>
               ))
@@ -146,18 +155,18 @@ const itemData = {
               </h3>
               <p class="mt-2 text-gray-900">{itemData.license}</p>
             </div>
-
-
           </div>
 
           <!-- Action Buttons -->
           <div
             class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200"
           >
-
-          <Button href="/licensing" class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-            Enquire about licensing
-          </Button>
+            <Button
+              href="/licensing"
+              class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+            >
+              Enquire about licensing
+            </Button>
           </div>
 
           <!-- Related Works 
@@ -182,19 +191,18 @@ const itemData = {
   <script is:inline>
     function switchImage(src, alt) {
       console.warn(src, alt);
-      const mainImage = document.getElementById('main-image');
+      const mainImage = document.getElementById("main-image");
       if (mainImage) {
         // Add fade out effect
-        mainImage.style.opacity = '0';
-        
+        mainImage.style.opacity = "0";
+
         // Switch image after fade out
         setTimeout(() => {
           mainImage.src = src;
           mainImage.alt = alt;
-          mainImage.style.opacity = '1';
+          mainImage.style.opacity = "1";
         }, 150);
       }
     }
   </script>
 </Layout>
-
