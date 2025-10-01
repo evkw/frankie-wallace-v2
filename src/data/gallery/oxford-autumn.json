@@ -1,0 +1,35 @@
+{
+  "id": "oxford-autumn",
+  "title": "Oxford Autumn",
+  "description": "This charming plaid pattern combines a classic vintage check with playful, hand-painted sports and toy motifs – including a tennis racquet, cricket ball, oars, and a little yacht. Perfect for kids’ apparel, nursery décor, or timeless accessories, it brings a nostalgic, storybook feel to your fall/autumn projects. The soft, muted autumnal/fall palette of sage green, warm cream, and hints of burgundy adds a cosy, heritage vibe, making it ideal for boutique children’s brands or heirloom sewing projects. Great for: kids’ clothing, quilts, wallpaper, bedding, fabric toys, and timeless handmade gifts. Seamless repeat, designed with love and painted by hand using watercolours",
+  "image": {
+    "src": "/images/oxford-autumn/oxford-autumn-main.jpg",
+    "alt": "oxford-autumn Pattern"
+  },
+
+  "additionalImages": [
+    {
+      "src": "/images/oxford-autumn/oxford-autumn-1.webp",
+      "alt": "Oxford Autumn Pattern 1"
+    },
+    {
+      "src": "/images/oxford-autumn/oxford-autumn-2.webp",
+      "alt": "Oxford Autumn Pattern 2"
+    },
+    {
+      "src": "/images/oxford-autumn/oxford-autumn-3.webp",
+      "alt": "Oxford Autumn Pattern 3"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "Hand-drawn",
+    "Plaid",
+    "Block Print",
+    "Tweed",
+    "Fall",
+    "Autumn"
+  ],
+  "tags": ["Tonal", "Monochromatic", "Lemons", "Ditsy"]
+}

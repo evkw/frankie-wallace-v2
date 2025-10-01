@@ -1,0 +1,38 @@
+{
+  "id": "australiana",
+  "title": "Australiana",
+  "description": "Celebrate the natural beauty of the Australian landscape with this warm and earthy collection. Featuring hand-painted watercolour botanicals, the designs highlight iconic native blooms like proteas, waratahs, and wattle, paired with soft coordinates and a classic plaid. The rich mustard and rust tones evoke sunsets over the bush and cosy, nostalgic moments, making this collection perfect for children’s apparel, textiles, and boutique products with a timeless, nature-inspired charm.",
+  "image": {
+    "src": "/images/australiana/australiana-main.jpg",
+    "alt": "Australiana Pattern"
+  },
+
+  "additionalImages": [
+    {
+      "src": "/images/australiana/australiana-1.png",
+      "alt": "Australiana Pattern 1"
+    },
+    {
+      "src": "/images/australiana/australiana-2.webp",
+      "alt": "Australiana Pattern 2"
+    },
+    {
+      "src": "/images/australiana/australiana-3.webp",
+      "alt": "Australiana Pattern 3"
+    },
+    {
+      "src": "/images/australiana/australiana-4.webp",
+      "alt": "Australiana Pattern 4"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "Hand-drawn",
+    "Gingham",
+    "Block Print",
+    "Floral",
+    "Watercolour"
+  ],
+  "tags": ["Tonal", "Monochromatic", "Lemons", "Ditsy"]
+}
