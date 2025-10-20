@@ -1,0 +1,38 @@
+{
+  "id": "cosy-christmas",
+  "title": "Cosy Christmas",
+  "description": "Warm up your holiday season with this charming hand-painted watercolour pattern collection featuring all your favorite Christmas treats. Perfect for kids’ Christmas pajamas, children’s apparel, holiday table linens, tea towels, kitchen textiles, and gift wrap.",
+  "image": {
+    "src": "/images/cosy-christmas/cosy-christmas-main.webp",
+    "alt": "cosy-christmas Pattern"
+  },
+
+  "additionalImages": [
+    {
+      "src": "/images/cosy-christmas/cosy-christmas-1.webp",
+      "alt": "cosy-christmas Pattern 1"
+    },
+    {
+      "src": "/images/cosy-christmas/cosy-christmas-2.webp",
+      "alt": "cosy-christmas Pattern 2"
+    },
+    {
+      "src": "/images/cosy-christmas/cosy-christmas-3.webp",
+      "alt": "cosy-christmas Pattern 3"
+    },
+    {
+      "src": "/images/cosy-christmas/cosy-christmas-4.webp",
+      "alt": "cosy-christmas Pattern 4"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "Hand-drawn",
+    "Gingham",
+    "Block Print",
+    "Floral",
+    "Watercolour"
+  ],
+  "tags": ["Heirloom holiday", "curated christmas", "cottagecore christmas"]
+}

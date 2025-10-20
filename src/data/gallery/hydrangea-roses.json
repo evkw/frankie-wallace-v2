@@ -1,0 +1,66 @@
+{
+  "id": "hydrangea-roses",
+  "title": "Hydrangea Roses",
+  "description": "A romantic blend of hand-painted hydrangeas, roses, and delicate botanical textures, the Hydrangea & Rose Collection captures timeless elegance in soft pastel hues. Each pattern is lovingly illustrated in watercolour, creating a gentle, airy look perfect for children’s apparel, nursery decor, bedding, and timeless kids’ fashion.",
+  "image": {
+    "src": "/images/hydrangea-roses/hydrangea-roses-main.webp",
+    "alt": "hydrangea-roses Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-1.webp",
+      "alt": "hydrangea-roses Pattern 1"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-2.webp",
+      "alt": "hydrangea-roses Pattern 2"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-3.webp",
+      "alt": "hydrangea-roses Pattern 3"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-4.webp",
+      "alt": "hydrangea-roses Pattern 4"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-5.webp",
+      "alt": "hydrangea-roses Pattern 5"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-6.webp",
+      "alt": "hydrangea-roses Pattern 6"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-7.webp",
+      "alt": "hydrangea-roses Pattern 7"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-8.webp",
+      "alt": "hydrangea-roses Pattern 8"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-9.webp",
+      "alt": "hydrangea-roses Pattern 9"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-10.webp",
+      "alt": "hydrangea-roses Pattern 10"
+    },
+    {
+      "src": "/images/hydrangea-roses/hydrangea-roses-11.webp",
+      "alt": "hydrangea-roses Pattern 11"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "Hand-drawn",
+    "Floral",
+    "Watercolour",
+    "geometric",
+    "windmill",
+    "disty"
+  ],
+  "tags": []
+}
