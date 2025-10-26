@@ -8,25 +8,26 @@ const { category } = Astro.params;
 export async function getStaticPaths() {
   return [
     { params: { category: "all" } },
-    { params: { category: "childrensIllustration" } },
-    { params: { category: "weddingIllustration" } },
-    { params: { category: "weddingStationery" } },
+    { params: { category: "childrensBooks" } },
+    { params: { category: "venues" } },
     { params: { category: "surfacePattern" } },
   ];
 }
 
-const items = await getCollection("gallery", (items) => !!category ? items.data.category === category : true );
+const items = await getCollection("gallery", (items) => {
+  return !!category && category !== "all"
+    ? items.data.category === category
+    : true;
+});
 
 // Set page title based on gallery type
 const pageTitle =
   category === "all"
     ? "All Illustrations"
-    : category === "childrensIllustration"
+    : category === "childrensBooks"
       ? "Childrens Book Illustrations"
-      : category === "weddingIllustration"
-        ? "Live Wedding Illustrations"
-        : category === "weddingStationery"
-          ? "Wedding Stationery"
+      : category === "venues"
+        ? "Venue Illustrations"
         : "Surface Pattern Designs";
 ---
 

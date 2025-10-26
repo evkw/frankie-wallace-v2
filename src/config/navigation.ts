@@ -27,7 +27,24 @@ export const navigationConfig: NavigationItem[] = [
   {
     label: 'Portfolio',
     href: '/gallery/surfacePattern',
-    isActive: true
+    isActive: true,
+    // subItems: [
+    //   {
+    //     label: 'Surface Patterns',
+    //     href: '/gallery/surfacePattern',
+    //     isActive: true
+    //   },
+    //   {
+    //     label: 'Venue Illustrations',
+    //     href: '/gallery/venues',
+    //     isActive: true
+    //   },
+    //   {
+    //     label: `Children's book Illustrations`,
+    //     href: '/gallery/childrensBooks',
+    //     isActive: true
+    //   },
+    // ]
   },
   {
     label: 'Store',
