@@ -1,0 +1,39 @@
+{
+  "id": "garden-reverie",
+  "title": "Garden Reverie",
+  "description": "A soft floral collection featuring delicate hand-painted blooms in blush, honey, and sage. A modern millefleur design with vintage garden charm, a cosy ditsy print, and a herringbone blender — a perfect trio for children’s apparel, bedding, and organic home textiles. Also available in a second, brighter colourway: Sunset Meadow.",
+  "image": {
+    "src": "/images/garden-reverie/garden-reverie-main.webp",
+    "alt": "garden-reverie Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/garden-reverie/garden-reverie-1.webp",
+      "alt": "garden-reverie Pattern 1"
+    },
+    {
+      "src": "/images/garden-reverie/garden-reverie-2.webp",
+      "alt": "garden-reverie Pattern 2"
+    },
+    {
+      "src": "/images/garden-reverie/garden-reverie-3.webp",
+      "alt": "garden-reverie Pattern 3"
+    },
+    {
+      "src": "/images/garden-reverie/garden-reverie-4.webp",
+      "alt": "garden-reverie Pattern 4"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "Hand-drawn",
+    "Millefleur",
+    "herringbone",
+    "cottagecore",
+    "ditsy",
+    "floral",
+    "watercolor"
+  ],
+  "tags": []
+}
