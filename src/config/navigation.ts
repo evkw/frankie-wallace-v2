@@ -53,7 +53,7 @@ export const navigationConfig: NavigationItem[] = [
     isActive: true
   },
   {
-    label: 'My Spoonflower Library',
+    label: 'Spoonflower',
     href: 'https://www.spoonflower.com/profiles/frankiewallaceart?sort=new',
     isExternal: true,
     isActive: true
