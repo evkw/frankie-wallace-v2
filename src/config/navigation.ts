@@ -14,9 +14,40 @@ export interface SocialMediaItem {
   isActive?: boolean;
 }
 
+export interface LinkTreeItem {
+  label: string;
+  copy: string;
+  href: string;
+}
+
 const formsConfig = {
 
 }
+
+export const linkTree: LinkTreeItem[] = [
+
+  {
+    label: 'View my Licensing Portfolio',
+    copy: 'Discover ready-to-license surface pattern collections for children’s apparel, fabric, and lifestyle brands.',
+    href: '/gallery/surfacePattern',
+  },
+  {
+    label: 'Shop Prints & Wall Decals ',
+    copy: 'Bring my hand-painted artwork into your home — nursery wall decals, art prints, and more, available on Etsy.',
+    href: 'https://www.etsy.com/shop/lovefrankieart',
+  },
+  {
+    label: 'Commission a Custom Painting',
+    copy: 'Looking for a bespoke watercolour artwork — perhaps a favourite venue, home, or keepsake piece? Let’s create something just for you.',
+    href: '/contact',
+  },
+  {
+    label: 'Join My Email List',
+    copy: 'Receive gentle updates on new pattern releases, limited prints, and behind-the-scenes stories: just once a month.',
+    href: '/subscribe',
+  },
+
+]
 
 export const navigationConfig: NavigationItem[] = [
   {

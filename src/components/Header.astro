@@ -3,6 +3,11 @@ import Banner from './Banner.astro';
 import { Image } from 'astro:assets';
 import logoImage from '../data/images/Frankie-logo-dark.avif';
 import { getActiveRoutes } from '../config/navigation';
+
+interface Props {
+  hideNav?: boolean;
+}
+const { hideNav = false } = Astro.props;
 ---
 
 <div class="bg-white">
@@ -50,8 +55,8 @@ import { getActiveRoutes } from '../config/navigation';
               alt="Frankie Wallace Logo"
               class="h-24 w-auto object-contain"
             />
-
-            {getActiveRoutes().map((item) => (
+            
+            {hideNav ? [] : getActiveRoutes().map((item) => (
               <div class="flow-root">
                 {item.subItems && item.subItems.length > 0 ? (
                   <div class="space-y-2">
@@ -116,7 +121,7 @@ import { getActiveRoutes } from '../config/navigation';
 
               <div class="hidden h-full lg:flex">
                 <div class="flex h-full justify-center space-x-8">
-                  {getActiveRoutes().map((item) => (
+                  {hideNav ? [] : getActiveRoutes().map((item) => (
                     <div class="relative group">
                       {item.subItems && item.subItems.length > 0 ? (
                         <div class="relative">
@@ -159,6 +164,7 @@ import { getActiveRoutes } from '../config/navigation';
 
               <!-- Mobile menu and search (lg-) -->
               <div class="flex flex-1 items-center lg:hidden">
+                {hideNav ? [] : (
                 <button
                   type="button"
                   class="-ml-2 rounded-md bg-white p-2 text-gray-400"
@@ -180,6 +186,7 @@ import { getActiveRoutes } from '../config/navigation';
                       stroke-linejoin="round"></path>
                   </svg>
                 </button>
+                )}
               </div>
 
                <div class="flex-3 flex justify-center lg:hidden">

@@ -1,7 +1,7 @@
 ---
 import Button from "../Button.astro";
 import { Image } from 'astro:assets';
-import newsletterImage from '../../data/images/EasterCardmockup.avif';
+import newsletterImage from '../../data/images/christmas-offer.webp';
 
 // NewsletterSection component for the subscription form
 ---
@@ -21,11 +21,18 @@ import newsletterImage from '../../data/images/EasterCardmockup.avif';
       <!-- Right side - Newsletter Form -->
       <div class="text-center lg:text-left">
         <h2 class="text-3xl font-bold font-header text-gray-900 mb-4">
-          Your Free Duckling Days Art Card
+          Join my VIP list for a free gift 
         </h2>
         <p class="text-lg text-gray-600 font-body mb-8">
-          Sign up to my VIP mailing list and get your printable art card instantly — plus first looks at my new collections.
+          Receive a set of printable hand-painted Christmas gift tags, plus:
         </p>
+
+        <ul class="text-gray-700 font-body mb-8 text-left list-disc list-inside space-y-2">
+          <li>Monthly tips for designing cohesive collections</li>
+          <li>Early access to new pattern releases</li>
+          <li>Special VIP licensing rates</li>
+        </ul>
+
         <form
           method="POST"
           action="https://formspree.io/f/xkgzkvww"

@@ -2,6 +2,12 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+
+interface Props {
+  hideNav?: boolean;
+}
+
+const { hideNav = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -10,8 +16,10 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frankie Wallace</title>
 
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-PJ04EFYQLD"
-    ></script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PJ04EFYQLD"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -24,11 +32,11 @@ import "../styles/global.css";
   </head>
   <body class="font-sans text-gray-900">
     <header id="site-header" class="transition-transform duration-300">
-      <Header />
+      <Header hideNav={hideNav} />
     </header>
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer hideNav={hideNav} />
   </body>
 </html>
