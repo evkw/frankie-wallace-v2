@@ -95,6 +95,11 @@ export const navigationConfig: NavigationItem[] = [
     isActive: true
   },
   {
+    label: 'Blog',
+    href: '/blog',
+    isActive: true
+  },
+  {
     label: 'Contact',
     href: '/contact',
     isActive: true,

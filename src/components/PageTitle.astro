@@ -1,0 +1,30 @@
+---
+import ducklingDaysImage from "../data/images/Duckling Days.png";
+
+interface Props {
+    pageTitle: string;
+    backgroundImageSrc?: string;
+}
+
+const { pageTitle, backgroundImageSrc }: Props = Astro.props as Props;
+const resolvedBgSrc = backgroundImageSrc ?? ducklingDaysImage.src;
+---
+
+<div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <div class="absolute inset-0 opacity-10">
+        <img
+            src={resolvedBgSrc}
+            alt="Page background image"
+            class="w-full h-full object-cover"
+        />
+    </div>
+    <div class="text-center">
+        <h1
+            class="text-4xl font-bold font-heading tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
+        >
+            {pageTitle}
+        </h1>
+
+        <slot />
+    </div>
+</div>

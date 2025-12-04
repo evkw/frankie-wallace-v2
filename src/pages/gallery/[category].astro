@@ -1,9 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { Image } from "astro:assets";
+
 import { getCollection } from "astro:content";
-import ducklingDaysImage from "../../data/images/Duckling Days.png";
 import Button from "../../components/Button.astro";
+import PageTitle from "../../components/PageTitle.astro";
+
 const { category } = Astro.params;
 
 export async function getStaticPaths() {
@@ -35,56 +36,37 @@ const pageTitle =
 <Layout>
   <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
-    <div class="bg-white relative overflow-hidden">
-      <!-- Background Image -->
-      <div class="absolute inset-0 opacity-10">
-        <img
-          src={ducklingDaysImage.src}
-          alt="Duckling Days background"
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div
-        class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
+
+    <PageTitle pageTitle={pageTitle}>
+      <p
+        class="mt-6 mb-6 text-2xl leading-8 text-gray-600 max-w-3xl mx-auto font-body"
       >
-        <div class="text-center">
-          <h1
-            class="text-4xl font-bold font-heading tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
-          >
-            {pageTitle}
-          </h1>
-          <p
-            class="mt-6 mb-6 text-2xl leading-8 text-gray-600 max-w-3xl mx-auto font-body"
-          >
-            Ready-to-license designs blending storybook nostalgia with modern
-            simplicity to add warmth and distinction to your product line.
-          </p>
+        Ready-to-license designs blending storybook nostalgia with modern
+        simplicity to add warmth and distinction to your product line.
+      </p>
 
-          <p class="text-base text-gray-700 font-body mb-6 max-w-3xl mx-auto">
-            Each design begins as a hand-painted watercolour, crafted to help
-            brands connect emotionally with their audience and stand out in a
-            digital world.
-          </p>
+      <p class="text-base text-gray-700 font-body mb-6 max-w-3xl mx-auto">
+        Each design begins as a hand-painted watercolour, crafted to help brands
+        connect emotionally with their audience and stand out in a digital
+        world.
+      </p>
 
-          <p class="text-base text-gray-700 font-body max-w-3xl mx-auto mb-6">
-            All collections are available for non-exclusive licensing, and I
-            also welcome exclusive collaborations and custom design projects.
-          </p>
+      <p class="text-base text-gray-700 font-body max-w-3xl mx-auto mb-6">
+        All collections are available for non-exclusive licensing, and I also
+        welcome exclusive collaborations and custom design projects.
+      </p>
 
-          <div
-            class="flex flex-col sm:flex-row gap-4 pt-6 mx-auto max-w-3xl justify-center"
-          >
-            <Button
-              href="/licensing"
-              class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
-            >
-              Work with me
-            </Button>
-          </div>
-        </div>
+      <div
+        class="flex flex-col sm:flex-row gap-4 pt-6 mx-auto max-w-3xl justify-center"
+      >
+        <Button
+          href="/licensing"
+          class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+        >
+          Work with me
+        </Button>
       </div>
-    </div>
-
+    </PageTitle>
     <!-- Gallery Grid -->
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div

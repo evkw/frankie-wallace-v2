@@ -62,5 +62,6 @@
     "windmill",
     "disty"
   ],
-  "tags": []
+  "tags": [],
+  "protected": false
 }

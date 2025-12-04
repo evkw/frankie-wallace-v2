@@ -8,6 +8,8 @@ interface Props {
 }
 
 const { hideNav = false } = Astro.props;
+const GTAG_ID = import.meta.env.PUBLIC_GTAG_ID;
+const isProd = import.meta.env.PROD;
 ---
 
 <html lang="en">
@@ -16,19 +18,23 @@ const { hideNav = false } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frankie Wallace</title>
 
-    <script
-      is:inline
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-PJ04EFYQLD"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+    {isProd && GTAG_ID && (
+      <fragment>
+        <script
+          is:inline
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
 
-      gtag("js", new Date());
-      gtag("config", "G-PJ04EFYQLD");
-    </script>
+          gtag("js", new Date());
+          gtag("config", "{GTAG_ID}");
+        </script>
+      </fragment>
+    )}
   </head>
   <body class="font-sans text-gray-900">
     <header id="site-header" class="transition-transform duration-300">

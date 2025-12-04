@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Prose from "../../components/Prose.astro";
+
+export async function getStaticPaths() {
+  // Get all gallery data
+  const allItems = await getCollection("blog");
+
+  // Generate paths for each item
+  return allItems.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+// Get the item from props
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout>
+  <Prose>
+    <Content />
+  </Prose>
+</Layout>

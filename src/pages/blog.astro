@@ -1,7 +1,39 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import PostPreview from "../components/PostPreview.astro";
+import PageTitle from "../components/PageTitle.astro";
+
+const posts = await getCollection("blog");
 ---
 
 <Layout>
-  <h1>Blog</h1>
+  <div class="bg-gray-50 min-h-screen">
+    <PageTitle pageTitle={"Blog"}>
+      <p
+        class="mt-6 mb-6 text-2xl leading-8 text-gray-600 max-w-3xl mx-auto font-body"
+      >
+        Explore articles on surface pattern design, watercolour techniques,
+        creative business tips, and more.
+      </p>
+
+    </PageTitle>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl lg:max-w-5xl space-y-8">
+      {
+        posts
+          .sort(
+            (a, b) =>
+              new Date(b.data.published).getTime() -
+              new Date(a.data.published).getTime(),
+          )
+          .map((post) => (
+            <div class="w-full">
+              <PostPreview post={post} />
+            </div>
+          ))
+      }
+      </div>
+    </div>
+  </div>
 </Layout>

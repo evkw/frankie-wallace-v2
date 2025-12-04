@@ -64,5 +64,6 @@
     "Chinoiserie",
     "Watercolour"
   ],
-  "tags": ["Tonal", "Monochromatic", "Lemons", "Ditsy"]
+  "tags": ["Tonal", "Monochromatic", "Lemons", "Ditsy"],
+  "protected": false
 }

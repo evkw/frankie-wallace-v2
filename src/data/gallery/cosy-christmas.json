@@ -38,5 +38,6 @@
     "Floral",
     "Watercolour"
   ],
-  "tags": ["Heirloom holiday", "curated christmas", "cottagecore christmas"]
+  "tags": ["Heirloom holiday", "curated christmas", "cottagecore christmas"],
+  "protected": true
 }
