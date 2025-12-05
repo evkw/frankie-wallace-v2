@@ -1,66 +1,14 @@
 ---
-import Button from "../Button.astro";
-import { Image } from 'astro:assets';
-import newsletterImage from '../../data/images/christmas-offer.webp';
 
-// NewsletterSection component for the subscription form
 ---
 
-<div class="bg-white py-12">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <!-- Left side - Easter Card Mockup -->
-      <div class="flex justify-center ">
-        <Image 
-          src={newsletterImage} 
-          alt="Easter Card Mockup" 
-          class="max-w-sm w-full h-auto rounded-lg shadow-lg"
-        />
-      </div>
-      
-      <!-- Right side - Newsletter Form -->
-      <div class="text-center lg:text-left">
-        <h2 class="text-3xl font-bold font-header text-gray-900 mb-4">
-          Join my VIP list for a free gift 
-        </h2>
-        <p class="text-lg text-gray-600 font-body mb-8">
-          Receive a set of printable hand-painted Christmas gift tags, plus:
-        </p>
+<div id="fd-form-693273410ae48f14b38d4297"></div>
 
-        <ul class="text-gray-700 font-body mb-8 text-left list-disc list-inside space-y-2">
-          <li>Monthly tips for designing cohesive collections</li>
-          <li>Early access to new pattern releases</li>
-          <li>Special VIP licensing rates</li>
-        </ul>
 
-        <form
-          method="POST"
-          action="https://formspree.io/f/xkgzkvww"
-          class="flex flex-col gap-4 justify-center "
-        >
 
-        <input
-            type="text"
-            name="name"
-            required
-            placeholder="Your name"
-            class="w-full sm:w-auto px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
-          />
-
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Your email address"
-            class="w-full sm:w-auto px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
-          />
-
-          <Button type="submit" class="px-6 py-2 rounded">
-            Join Mailing List
-          </Button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
+<script>
+  window.fd("form", {
+    formId: "693273410ae48f14b38d4297",
+    containerEl: "#fd-form-693273410ae48f14b38d4297",
+  });
+</script>

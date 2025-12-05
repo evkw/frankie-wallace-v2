@@ -5,11 +5,10 @@ slug: "why-i-paint-watercolour"
 published: 2025-12-04T00:00:00.000Z
 tags: ["watercolour surface pattern design", "nostalgic illustration", "children’s pattern designer", "hand-painted prints", "watercolour artist Australia", "icensing patterns for children’s brands", "vintage-inspired designs"]
 author: "Frankie Wallace"
-canonicalURL: "https://frankiewallace.art/blog/why-i-paint-watercolour"
+canonicalURL: "https://frankiewallace.com/journal/why-i-paint-watercolour"
 draft: false
 ---
 
-# 🌿 Letters From the Studio  
 ## Why I Paint in Watercolour: Finding Calm, Storytelling, and Nostalgia in a Digital World
 
 Long before I became a **watercolour surface pattern designer**, watercolour was simply a lifeline. I first picked up a paintbrush in an art therapy session during a season when life felt particularly overwhelming. 

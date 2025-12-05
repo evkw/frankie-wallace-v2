@@ -6,7 +6,8 @@
       "src": "/images/day-with-hedgie/day-with-hedgie-main.jpg",
       "alt": "Day With Hedgie Pattern"
     },
-  
+
+    "protected": true,
     "additionalImages": [
       {
         "src": "/images/day-with-hedgie/day-with-hedgie-1.jpg",
@@ -48,7 +49,6 @@
     "category": "surfacePattern",
     "license": "non-exclusive",
     "techniques": ["Floral", "Watercolor", "Hand-drawn"],
-    "tags": [ "Tonal", "Monochromatic", "Lemons", "Ditsy"],
-    "protected": false
+    "tags": [ "Tonal", "Monochromatic", "Lemons", "Ditsy"]
   }
   

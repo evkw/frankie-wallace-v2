@@ -2,6 +2,12 @@
 import type { GTagProp } from "../data/models/tagProp.model";
 import NewsletterSection from "./home/NewsletterSection.astro";
 
+interface Props {
+  skipSessionCheck?: boolean;
+  autoOpen?: boolean;
+}
+
+
 const newsLetterPopupTag: GTagProp = {
   eventName: "newsletter_signup_completed",
   props: {
@@ -46,40 +52,31 @@ const newsLetterPopupTag: GTagProp = {
   document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("newsletter-popup");
     const closeButton = document.getElementById("close-popup");
-
     if (window.innerHeight < 800) {
       popup.classList.add("hidden");
       return;
     }
 
-    // Check if user has already closed the popup in this session
-    const hasClosedPopup = sessionStorage.getItem("newsletterPopupClosed");
-    if (!hasClosedPopup) {
-      // Show popup after a short delay
+    function openPopup() {
+      popup.classList.remove("hidden");
+      popup.style.opacity = "0";
+      popup.style.transition = "opacity 0.3s ease-in-out";
       setTimeout(() => {
-        popup.classList.remove("hidden");
-        // Add fade-in animation
-        popup.style.opacity = "0";
-        popup.style.transition = "opacity 0.3s ease-in-out";
-        setTimeout(() => {
-          popup.style.opacity = "1";
-        }, 10);
-      }, 2000); // Show after 2 seconds
+        popup.style.opacity = "1";
+      }, 10);
     }
+
+    // Expose a global API for re-opening the popup
+    window.FrankieNewsletter = window.FrankieNewsletter || {};
+    window.FrankieNewsletter.open = openPopup;
+
     // Close popup functionality
     function closePopup() {
-      gtag("event", "newsletter_popup_closed", {
-        event_category: "engagement",
-        event_label: "Newsletter Popup",
-      });
-
       popup.style.opacity = "0";
       setTimeout(() => {
         popup.classList.add("hidden");
       }, 300);
 
-      // Mark as closed in session storage
-      sessionStorage.setItem("newsletterPopupClosed", "true");
     }
 
     // Close button click
@@ -98,5 +95,9 @@ const newsLetterPopupTag: GTagProp = {
         closePopup();
       }
     });
+
+    if (AUTO_OPEN) {
+      openPopup();
+    }
   });
 </script>

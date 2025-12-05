@@ -20,9 +20,6 @@ export interface LinkTreeItem {
   href: string;
 }
 
-const formsConfig = {
-
-}
 
 export const linkTree: LinkTreeItem[] = [
 
@@ -95,8 +92,8 @@ export const navigationConfig: NavigationItem[] = [
     isActive: true
   },
   {
-    label: 'Blog',
-    href: '/blog',
+    label: 'Journal',
+    href: '/journal',
     isActive: true
   },
   {
@@ -157,11 +154,6 @@ export const inactiveRoutes: NavigationItem[] = [
     href: '/pattern-library',
     isActive: false
   },
-  {
-    label: 'Blog',
-    href: '/blog',
-    isActive: false
-  }
 ];
 
 // Helper function to get active routes

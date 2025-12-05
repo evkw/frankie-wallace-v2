@@ -18,12 +18,7 @@ export async function getStaticPaths() {
 // Get the item from props
 const { item } = Astro.props;
 
-const defaultCategoryTitle =
-  item.data.category === "childrensIllustration"
-    ? "Children's Book Illustration"
-    : item.data.category === "weddingIllustration"
-      ? "Wedding Illustration"
-      : "Seamless Repeat Pattern Collection";
+const defaultCategoryTitle = "Seamless Repeat Pattern Collection";
 
 // Create item data structure
 const itemData = {
@@ -39,23 +34,28 @@ const itemData = {
     item.data.license === "non-exclusive"
       ? "Non-exclusive commercial license for 1 year. Need extended terms or exclusive rights? Just send me a message!"
       : "Exclusive commercial license for 1 year",
+  protected: Boolean(item.data.protected),
 };
 ---
 
 <Layout>
-  <div class="bg-gray-50 min-h-screen">
+  <div
+    class="bg-gray-50 min-h-screen"
+    data-protected={Boolean(item.data.protected) ? "true" : "false"}
+    id={item.data.id}
+  >
     <!-- Breadcrumb -->
     <div class="bg-white border-b">
       <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
         <nav class="flex" aria-label="Breadcrumb">
           <ol class="flex items-center space-x-4">
             <li>
-              <button
-                onclick="history.back()"
-                class="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
+              <a
+                href="/gallery/surfacePattern"
+                class="text-gray-500 hover:text-gray-700 transition-colors"
               >
                 Back to Portfolio
-              </button>
+              </a>
             </li>
             <li>
               <svg
@@ -185,10 +185,19 @@ const itemData = {
     </div>
   </div>
 
-  <!-- Newsletter Popup -->
-  <NewsletterPopup />
 
   <script is:inline>
+    // Gate protected items: if not a member, redirect to password with item id
+    function gateAccess() {
+      const root = document.querySelector("[data-protected]");
+      const isProtected = root?.getAttribute("data-protected") === "true";
+      const isMember = localStorage.getItem("isMember") === "true";
+      if (isProtected && !isMember) {
+        window.location.replace(`/password?id=${encodeURIComponent(root.id)}`);
+        return;
+      }
+    }
+
     function switchImage(src, alt) {
       console.warn(src, alt);
       const mainImage = document.getElementById("main-image");
@@ -204,5 +213,10 @@ const itemData = {
         }, 150);
       }
     }
+
+
+    (() => {
+      gateAccess();
+    })();
   </script>
 </Layout>

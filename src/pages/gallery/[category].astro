@@ -30,7 +30,7 @@ const pageTitle =
       ? "Childrens Book Illustrations"
       : category === "venues"
         ? "Venue Illustrations"
-        : "Surface Pattern Designs";
+        : "Surface Pattern Collections";
 ---
 
 <Layout>
@@ -77,8 +77,28 @@ const pageTitle =
             <a
               href={`/gallery-item/${item.id}`}
               class="group block bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer overflow-hidden"
+              data-protected-link={Boolean(item.data.protected) ? 'true' : 'false'}
+              data-item-id={item.id}
             >
-              <div class="aspect-square overflow-hidden">
+              <div class="relative aspect-square overflow-hidden">
+                {Boolean(item.data.protected) && (
+                  <div data-protected="true" class="absolute top-2 right-2 z-10 flex items-center gap-2 rounded-full bg-amber-100/90 text-amber-800 px-3 py-1 text-xs font-semibold shadow-sm">
+                    <svg
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 11c-.828 0-1.5.672-1.5 1.5V15h3v-2.5c0-.828-.672-1.5-1.5-1.5zm4-2V7a4 4 0 10-8 0v2H6a2 2 0 00-2 2v6a2 2 0 002 2h12a2 2 0 002-2v-6a2 2 0 00-2-2h-2zM10 7a2 2 0 114 0v2h-4V7z"
+                      />
+                    </svg>
+                    Become a member to view!
+                  </div>
+                )}
                 <img
                   src={item.data.image.src}
                   alt={item.data.image.alt}
@@ -92,7 +112,11 @@ const pageTitle =
                   {item.data.title}
                 </h3>
                 <div class="mt-2 flex items-center text-sm text-gray-500">
-                  <span>Click to view details</span>
+                  <span data-protected-text>
+                    {Boolean(item.data.protected)
+                      ? "You must be a member to view"
+                      : "Click to view details"}
+                  </span>
                   <svg
                     class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -137,5 +161,35 @@ const pageTitle =
         )
       }
     </div>
+    <script is:inline>
+      function isProtectedAndNotMember() {
+        try {
+          const flag = localStorage.getItem('isMember');
+          return !flag || flag === 'false';
+        } catch (e) {
+          return true;
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const isMember = !isProtectedAndNotMember();
+
+        if (isMember) {
+          document.querySelectorAll('[data-protected="true"]').forEach((el) => {
+            el.classList.add('hidden');
+          });
+          document.querySelectorAll('[data-protected-text]').forEach((el) => {
+            el.textContent = 'Click to view details';
+          });
+        } else {
+          // Rewrite protected links to password gate
+          document.querySelectorAll('a[data-protected-link="true"]').forEach((a) => {
+            const id = a.getAttribute('data-item-id');
+            const qp = id ? `?id=${encodeURIComponent(id)}` : '';
+            a.setAttribute('href', `/password${qp}`);
+          });
+        }
+      });
+    </script>
   </div>
 </Layout>
