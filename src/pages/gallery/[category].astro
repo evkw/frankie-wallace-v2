@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Button from "../../components/Button.astro";
 import PageTitle from "../../components/PageTitle.astro";
+import FAQ from "../../components/FAQ.astro";
 
 const { category } = Astro.params;
 
@@ -174,6 +175,8 @@ const pageTitle =
           </div>
         )
       }
+
+      <FAQ />
     </div>
     <script is:inline>
       function isProtectedAndNotMember() {

@@ -1,0 +1,104 @@
+---
+const faqs = [
+  {
+    question: "Do you create hand-painted patterns or digital artwork?",
+    answer: "All of my designs begin as hand-painted watercolours, giving brands a unique, organic look that stands out from digital artwork. Each pattern is then professionally prepared for seamless repeat and production."
+  },
+  {
+    question: "Can I license your patterns for apparel, textiles, or packaging?",
+    answer: "Yes, my designs are available for non-exclusive and exclusive surface pattern licensing across apparel, children’s wear, textiles, packaging, and more. I deliver production-ready files in your preferred format."
+  },
+  {
+    question: "Do you offer custom pattern design for brands?",
+    answer: "Absolutely. I create custom watercolour pattern collections based on your colour palette, theme, and storytelling needs, with clear timelines and flexible licensing options."
+  },
+  {
+    question: "What makes your patterns different from other designers?",
+    answer: "Every design is hand-painted, not digitally generated, giving brands a high-quality, nostalgic, organic aesthetic that’s difficult to replicate with AI or vectors. This approach helps your products feel more premium and emotionally resonant."
+  },
+  {
+    question: "How do I see the full collection and request access to files?",
+    answer: "You can browse my portfolio on this page, and brands can also unlock my Lookbook Library for full pattern previews. Just request access or join my licensing list to receive the password and next steps."
+  }
+];
+---
+
+<section class="py-16 sm:py-24">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+        Frequently Asked Questions
+      </h2>
+      <!-- <p class="mt-4 text-lg text-gray-600">
+        Everything you need to know about licensing my artwork
+      </p> -->
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button
+            type="button"
+            class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+            data-faq-index={index}
+          >
+            <span class="text-lg font-semibold text-gray-900 pr-8">
+              {faq.question}
+            </span>
+            <svg
+              class="faq-icon h-6 w-6 text-gray-500 transition-transform duration-200 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="faq-answer overflow-hidden transition-all duration-200 ease-in-out max-h-0"
+            data-faq-content={index}
+          >
+            <div class="p-6 pt-0 text-gray-600 leading-relaxed">
+              {faq.answer}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const questions = document.querySelectorAll('.faq-question');
+    
+    questions.forEach((question) => {
+      question.addEventListener('click', () => {
+        const index = question.getAttribute('data-faq-index');
+        const answer = document.querySelector(`[data-faq-content="${index}"]`);
+        const icon = question.querySelector('.faq-icon');
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+          // Collapse
+          question.setAttribute('aria-expanded', 'false');
+          answer?.classList.remove('max-h-96');
+          answer?.classList.add('max-h-0');
+          icon?.classList.remove('rotate-180');
+        } else {
+          // Expand
+          question.setAttribute('aria-expanded', 'true');
+          answer?.classList.remove('max-h-0');
+          answer?.classList.add('max-h-96');
+          icon?.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
