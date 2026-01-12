@@ -39,5 +39,6 @@
     "Watercolour"
   ],
   "tags": ["Heirloom holiday", "curated christmas", "cottagecore christmas"],
-  "protected": true
+  "protected": false,
+  "dateCreated": "2026-10-20T00:00:00.000Z"
 }

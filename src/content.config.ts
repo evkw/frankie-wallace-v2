@@ -31,6 +31,7 @@ const galleryScehma = z.object({
   techniques: z.array(z.string()),
   tags: z.array(z.string()),
   protected: z.boolean(),
+  dateCreated: z.string(),
 });
 
 

@@ -22,6 +22,20 @@ const items = await getCollection("gallery", (items) => {
     : true;
 });
 
+// Sort by protected status (protected first), then by dateCreated (newest first)
+items.sort((a, b) => {
+  const aProtected = Boolean(a.data.protected);
+  const bProtected = Boolean(b.data.protected);
+  
+  if (aProtected !== bProtected) {
+    return aProtected ? -1 : 1; // protected first
+  }
+  
+  const aDate = a.data.dateCreated ? new Date(a.data.dateCreated).getTime() : 0;
+  const bDate = b.data.dateCreated ? new Date(b.data.dateCreated).getTime() : 0;
+  return bDate - aDate; // newest first
+});
+
 // Set page title based on gallery type
 const pageTitle =
   category === "all"

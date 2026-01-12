@@ -33,5 +33,6 @@
   "license": "non-exclusive",
   "techniques": ["Floral", "Watercolor", "Hand-drawn"],
   "tags": [ "Tonal", "Monochromatic", "Lemons", "Ditsy"],
-  "protected": false
+  "protected": false,
+  "dateCreated": "2025-08-10T00:00:00.000Z"
 }

@@ -1,0 +1,40 @@
+{
+  "id": "berry-sweet",
+  "title": "Berry Sweet",
+  "description": "Berry Sweet is a playful, hand-painted pattern collection created for Valentine’s Day bows, baby apparel, and sweet childrens accessories. Featuring strawberries, tiny florals, ladybirds, and heart details, the collection blends charm and softness with a hint of whimsy. A warm palette of blush, berry red, soft lilac, and creamy neutrals makes the range ideal for seasonal drops, coordinated bow sets, rompers, dresses, and giftable accessories; designed to feel festive yet timeless.",
+  "image": {
+    "src": "/images/berry-sweet/berry-sweet-main.webp",
+    "alt": "berry-sweet Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/berry-sweet/berry-sweet-1.webp",
+      "alt": "berry-sweet Pattern 1"
+    },
+    {
+      "src": "/images/berry-sweet/berry-sweet-2.webp",
+      "alt": "berry-sweet Pattern 2"
+    },
+    {
+      "src": "/images/berry-sweet/berry-sweet-3.webp",
+      "alt": "berry-sweet Pattern 3"
+    },
+    {
+      "src": "/images/berry-sweet/berry-sweet-4.webp",
+      "alt": "berry-sweet Pattern 4"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "hand drawn",
+    "strawberries",
+    "non-directional",
+    "cottagecore",
+    "floral",
+    "Valentine’s Day"
+  ],
+  "tags": [],
+  "protected": false,
+  "dateCreated": "2026-01-12T00:00:00.000Z"
+}

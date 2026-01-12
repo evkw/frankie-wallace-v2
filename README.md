@@ -38,6 +38,87 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## 🖼️ Image Preparation Script
+
+The `scripts/prepare-images.js` script converts and optimizes images for the gallery. It processes images into WebP format and generates corresponding JSON metadata files.
+
+### Prerequisites
+
+The script requires the `sharp` package for image processing:
+
+```sh
+npm install sharp
+```
+
+### Basic Usage
+
+```sh
+node scripts/prepare-images.js --folder=my-gallery --id=my-gallery
+```
+
+### Command-Line Options
+
+| Option | Alias | Description | Default |
+| :--- | :--- | :--- | :--- |
+| `--inputDir` | `--input` | Base input directory containing images | `./images_in` |
+| `--folder` | `--f` | Subfolder inside input directory | `""` |
+| `--id` | `--name` | ID used in JSON and filenames | Folder name or input dir |
+| `--main` | | Original filename to mark as main image | First image |
+| `--quality` | `--q` | WebP quality (0-100) | `80` |
+| `--title` | | Gallery title | Auto-generated from ID |
+| `--description` | | Gallery description | Default placeholder text |
+| `--category` | | Gallery category | `surfacePattern` |
+| `--license` | | License type | `non-exclusive` |
+| `--techniques` | | Comma-separated techniques | `Hand-drawn,Floral,Watercolour` |
+| `--tags` | | Comma-separated tags | `[]` |
+| `--publicPath` | | Public path prefix for URLs | `/images` |
+| `--width` | | Max width (preserves aspect ratio) | No limit |
+| `--height` | | Max height (preserves aspect ratio) | No limit |
+
+### Examples
+
+**Basic conversion with custom ID:**
+```sh
+node scripts/prepare-images.js --folder=spring-flowers --id=spring-flowers
+```
+
+**Specify main image and quality:**
+```sh
+node scripts/prepare-images.js --folder=roses --id=hydrangea-roses --main=rose-main.jpg --quality=90
+```
+
+**Full metadata customization:**
+```sh
+node scripts/prepare-images.js \
+  --folder=autumn \
+  --id=oxford-autumn \
+  --title="Oxford Autumn Collection" \
+  --description="Warm autumn leaves and cozy scenes" \
+  --category=surfacePattern \
+  --techniques="Watercolour,Hand-drawn,Seasonal" \
+  --tags="autumn,leaves,orange,warm"
+```
+
+**Resize images while converting:**
+```sh
+node scripts/prepare-images.js --folder=large-images --id=gallery --width=2000 --quality=85
+```
+
+### Output
+
+The script creates:
+- A folder named after the `--id` in the current directory
+- WebP images named `{id}-main.webp` and `{id}-1.webp`, `{id}-2.webp`, etc.
+- A JSON file `{id}.json` with gallery metadata
+
+### Workflow
+
+1. Place your images in a folder (e.g., `./images_in/my-collection/`)
+2. Run the script with appropriate options
+3. Move the generated folder to `public/images/`
+4. Move the JSON file to `src/data/gallery/`
+5. Update the JSON description and metadata as needed
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

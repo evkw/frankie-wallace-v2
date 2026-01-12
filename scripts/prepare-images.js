@@ -1,6 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const sharp = require("sharp");
+import { date } from "astro:schema";
+import fs from "fs";
+import path from "path";
+import sharp from "sharp";
 
 // Simple arg parser for --key=value or positional fallback
 function parseArgs() {
@@ -49,10 +50,16 @@ const tags = argv.tags ? argv.tags.split(",").map((s) => s.trim()) : [];
 // public path prefix used in JSON src values
 const publicPath = argv.publicPath || "/images"; // e.g. /images
 
-// ensure output dir (and id subfolder) exists
-const targetDir = path.join(id);
-if (!fs.existsSync(targetDir)) {
-  fs.mkdirSync(targetDir, { recursive: true });
+// output directories
+const imagesOutputDir = path.join("public", "images", id);
+const jsonOutputDir = path.join("src", "data", "gallery");
+
+// ensure output directories exist
+if (!fs.existsSync(imagesOutputDir)) {
+  fs.mkdirSync(imagesOutputDir, { recursive: true });
+}
+if (!fs.existsSync(jsonOutputDir)) {
+  fs.mkdirSync(jsonOutputDir, { recursive: true });
 }
 
 fs.readdir(inputDir, async (err, files) => {
@@ -98,7 +105,7 @@ fs.readdir(inputDir, async (err, files) => {
       counter++;
     }
     const outName = `${outBase}.webp`;
-    const outputPath = path.join(targetDir, outName);
+    const outputPath = path.join(imagesOutputDir, outName);
 
 
     try {
@@ -122,7 +129,7 @@ fs.readdir(inputDir, async (err, files) => {
         output: outName,
         isMain: i === mainIndex,
       });
-      console.log(`Converted: ${file} → ${path.join(id, outName)}`);
+      console.log(`Converted: ${file} → ${path.join("public", "images", id, outName)}`);
     } catch (e) {
       console.error(`Error converting ${file}:`, e);
       console.error(e.stack || "");
@@ -149,10 +156,12 @@ fs.readdir(inputDir, async (err, files) => {
     license,
     techniques,
     tags,
+    protected: false,
+    dateCreated: new Date(),
   };
 
-  // write JSON file next to images: <outputDir>/<id>/<id>.json
-  const jsonPath = path.join(targetDir, `${id}.json`);
+  // write JSON file to src/data/gallery/{id}.json
+  const jsonPath = path.join(jsonOutputDir, `${id}.json`);
   fs.writeFile(jsonPath, JSON.stringify(json, null, 2), (writeErr) => {
     if (writeErr) {
       console.error("Error writing JSON file:", writeErr);

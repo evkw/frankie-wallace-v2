@@ -1,0 +1,46 @@
+{
+  "id": "little-burrow-garden",
+  "title": "Little Burrow Garden",
+  "description": "The Little Burrow Garden is a sleepy, storybook-inspired pattern collection featuring hand-painted florals, sweet woodland rabbits, and a soft coordinating check. Delicate watercolour details and spacious layouts create a calm, whimsical feel.With a soothing palette of cream, soft sage, pale blue, and warm neutrals, the collection is designed for children’s apparel, baby textiles, nursery décor, and stationery: offering a timeless, comforting aesthetic with subtle character charm.",
+  "image": {
+    "src": "/images/little-burrow-garden/little-burrow-garden-main.webp",
+    "alt": "little-burrow-garden Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/little-burrow-garden/little-burrow-garden-1.webp",
+      "alt": "little-burrow-garden Pattern 1"
+    },
+    {
+      "src": "/images/little-burrow-garden/little-burrow-garden-2.webp",
+      "alt": "little-burrow-garden Pattern 2"
+    },
+    {
+      "src": "/images/little-burrow-garden/little-burrow-garden-3.webp",
+      "alt": "little-burrow-garden Pattern 3"
+    },
+    {
+      "src": "/images/little-burrow-garden/little-burrow-garden-4.webp",
+      "alt": "little-burrow-garden Pattern 4"
+    },
+    {
+      "src": "/images/little-burrow-garden/little-burrow-garden-5.webp",
+      "alt": "little-burrow-garden Pattern 5"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "hand drawn",
+    "trailing floral",
+    "directional",
+    "vintage",
+    "cottagecore",
+    "bunnies",
+    "floral",
+    "watercolour"
+  ],
+  "tags": [],
+  "protected": true,
+  "dateCreated": "2026-01-12T00:00:00.000Z"
+}
