@@ -176,8 +176,8 @@ export const inactiveRoutes: NavigationItem[] = [
 ];
 
 // Helper function to get active routes
-export const getActiveRoutes = (): NavigationItem[] => {
-  return navigationConfig.filter(route => route.isActive && route.footerOnly !== true);
+export const getActiveRoutes = (footer = false): NavigationItem[] => {
+  return navigationConfig.filter(route => route.isActive && (footer == false ? route.footerOnly !== true : true));
 };
 
 // Helper function to get all routes (active and inactive)

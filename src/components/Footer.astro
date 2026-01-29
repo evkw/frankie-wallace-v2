@@ -10,7 +10,7 @@ interface Props {
 
 const { hideNav = false } = Astro.props;
 
-const navigationItems = getActiveRoutes();
+const navigationItems = getActiveRoutes(true);
 const socialMediaItems = getActiveSocialMedia();
 ---
 
