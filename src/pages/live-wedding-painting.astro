@@ -1,0 +1,351 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover object-[70%_center] md:scale-100 md:object-center"
+    >
+      <source src="/images/live-wedding/WeddingPainting.mp4" type="video/mp4" />
+    </video>
+    
+    <div class="absolute inset-0 bg-black/20"></div>
+    
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto text-white">
+      <h1 class="text-5xl md:text-6xl font-bold font-header mb-6">
+        Your Wedding Day, Painted Live
+      </h1>
+      <p class="text-xl md:text-2xl font-body mb-8 leading-relaxed">
+        I create a single, large-scale painting during your wedding, capturing the atmosphere, beauty, and emotion of the day as it unfolds.
+      </p>
+    </div>
+  </section>
+
+  <!-- What Is Live Wedding Painting -->
+  <section class="max-w-4xl mx-auto px-4 py-20">
+    <h2 class="text-4xl font-bold font-header text-gray-900 mb-6 text-center">
+      What Is Live Wedding Painting?
+    </h2>
+    <div class="space-y-4 text-lg text-gray-700 font-body">
+      <p>
+        Live wedding painting is the creation of an original artwork during your wedding day, inspired by a chosen moment; often the ceremony, reception, or a meaningful scene that reflects the feeling of the day.
+      </p>
+      <p>
+        Guests are welcome to observe the fine art process as the painting takes shape, taking in the creation of a piece that will be treasured long after the day has passed.
+      </p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="max-w-7xl mx-auto px-4 py-20 bg-gray-50">
+    <h2 class="text-4xl font-bold font-header text-gray-900 mb-4 text-center">
+      Portfolio
+    </h2>
+    <p class="text-lg text-gray-600 font-body text-center mb-12">
+      A selection of live wedding paintings and large-scale commissioned works.
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Live Wedding Images -->
+      <div class="relative group cursor-pointer portfolio-image-wrapper">
+        <img 
+          src="/images/live-wedding/live-wedding-1.webp" 
+          alt="Live wedding painting in progress" 
+          class="aspect-square object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105 portfolio-image"
+        />
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 rounded-lg flex items-center justify-center">
+          <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+            </svg>
+            <p class="text-sm font-semibold">Click to view</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer portfolio-image-wrapper">
+        <img 
+          src="/images/live-wedding/live-wedding-2.webp" 
+          alt="Live wedding painting ceremony" 
+          class="aspect-square object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105 portfolio-image"
+        />
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 rounded-lg flex items-center justify-center">
+          <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+            </svg>
+            <p class="text-sm font-semibold">Click to view</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer portfolio-image-wrapper">
+        <img 
+          src="/images/live-wedding/live-wedding-3.webp" 
+          alt="Completed live wedding painting" 
+          class="aspect-square object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105 portfolio-image"
+        />
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 rounded-lg flex items-center justify-center">
+          <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+            </svg>
+            <p class="text-sm font-semibold">Click to view</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+    <button 
+      id="closeModal" 
+      class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-10"
+      aria-label="Close"
+    >
+      &times;
+    </button>
+    <img 
+      id="modalImage" 
+      src="" 
+      alt="" 
+      class="max-w-full max-h-full object-contain"
+    />
+  </div>
+
+  <script>
+    // Get all portfolio image wrappers
+    const imageWrappers = document.querySelectorAll('.portfolio-image-wrapper');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
+
+    // Add click event to each image wrapper
+    imageWrappers.forEach(wrapper => {
+      wrapper.addEventListener('click', () => {
+        const img = wrapper.querySelector('.portfolio-image');
+        if (img) {
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // Close modal when clicking close button
+    closeModal?.addEventListener('click', () => {
+      modal?.classList.add('hidden');
+      modal?.classList.remove('flex');
+      document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside the image
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+  <!-- How It Works -->
+  <section class="max-w-5xl mx-auto px-4 py-20">
+    <h2 class="text-4xl font-bold font-header text-gray-900 mb-12 text-center">
+      How It Works
+    </h2>
+    
+    <div class="space-y-12">
+      <!-- Before the Wedding -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="md:w-1/4">
+          <h3 class="text-2xl font-bold font-header text-gray-900 mb-2">
+            Before the Wedding
+          </h3>
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-lg text-gray-700 font-body">
+            We discuss your vision, preferred scene, colour palette, and any logistical details to ensure the painting integrates seamlessly into your day.
+          </p>
+        </div>
+      </div>
+
+      <!-- On the Day -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="md:w-1/4">
+          <h3 class="text-2xl font-bold font-header text-gray-900 mb-2">
+            On the Day
+          </h3>
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-lg text-gray-700 font-body">
+            I arrive and set up discreetly, painting the background first, and then adding a key moment of your choosing. The artwork evolves throughout the event as the celebration unfolds.
+          </p>
+        </div>
+      </div>
+
+      <!-- During the Celebration -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="md:w-1/4">
+          <h3 class="text-2xl font-bold font-header text-gray-900 mb-2">
+            During the Celebration
+          </h3>
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-lg text-gray-700 font-body">
+            Guests may watch the painting take shape at their own pace.
+          </p>
+        </div>
+      </div>
+
+      <!-- After the Wedding -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="md:w-1/4">
+          <h3 class="text-2xl font-bold font-header text-gray-900 mb-2">
+            After the Wedding
+          </h3>
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-lg text-gray-700 font-body">
+            The painting is taken back to the studio for refinements and completion, ensuring a polished, finished artwork.
+          </p>
+        </div>
+      </div>
+
+      <!-- Delivery -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="md:w-1/4">
+          <h3 class="text-2xl font-bold font-header text-gray-900 mb-2">
+            Delivery
+          </h3>
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-lg text-gray-700 font-body">
+            Your completed painting is delivered or made available for collection within an agreed timeframe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Couples Choose -->
+  <section class="max-w-5xl mx-auto px-4 py-20 bg-gray-50">
+    <h2 class="text-4xl font-bold font-header text-gray-900 mb-16 text-center">
+      Why Couples Choose Live Wedding Painting
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+      <div class="text-center">
+        <h3 class="font-bold font-header text-gray-900 mb-3 text-lg">Meaningful Alternative</h3>
+        <p class="text-gray-700 font-body">
+          A meaningful alternative to traditional wedding keepsakes
+        </p>
+      </div>
+      
+      <div class="text-center">
+        <h3 class="font-bold font-header text-gray-900 mb-3 text-lg">Memorable Experience</h3>
+        <p class="text-gray-700 font-body">
+          A shared moment guests remember long after the day
+        </p>
+      </div>
+      
+      <div class="text-center">
+        <h3 class="font-bold font-header text-gray-900 mb-3 text-lg">Captures Atmosphere</h3>
+        <p class="text-gray-700 font-body">
+          A physical artwork that captures atmosphere
+        </p>
+      </div>
+      
+      <div class="text-center">
+        <h3 class="font-bold font-header text-gray-900 mb-3 text-lg">Timeless Investment</h3>
+        <p class="text-gray-700 font-body">
+          A timeless piece to live in your home for years to come
+        </p>
+      </div>
+      
+      <div class="md:col-span-2 text-center">
+        <h3 class="font-bold font-header text-gray-900 mb-3 text-lg">One of a Kind</h3>
+        <p class="text-gray-700 font-body max-w-md mx-auto">
+          Each painting is entirely unique
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Finer Details -->
+  <section class="max-w-4xl mx-auto px-4 py-20">
+    <h2 class="text-4xl font-bold font-header text-gray-900 mb-12 text-center">
+      Finer Details
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div>
+        <h3 class="text-xl font-bold font-header text-gray-900 mb-2">Medium</h3>
+        <p class="text-gray-700 font-body">Oil or watercolour</p>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-bold font-header text-gray-900 mb-2">Artwork Size</h3>
+        <p class="text-gray-700 font-body">Large-scale formats, tailored to the commission</p>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-bold font-header text-gray-900 mb-2">Location</h3>
+        <p class="text-gray-700 font-body">I am based in Sydney but available for weddings across Australia (travel fees may apply)</p>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-bold font-header text-gray-900 mb-2">Investment</h3>
+        <p class="text-gray-700 font-body mb-2">
+          Live wedding painting commissions begin at $1,800.
+        </p>
+        <p class="text-sm text-gray-600 font-body">
+          Each commission is quoted individually based on size, location, and timing.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded">
+      <p class="text-gray-700 font-body italic">
+        A limited number of live painting commissions are available each year.
+      </p>
+    </div>
+  </section>
+
+  <!-- Enquiry Section -->
+  <section class="max-w-3xl mx-auto px-4 py-20 text-center">
+    <h2 class="text-4xl font-bold font-header text-gray-900 mb-6">
+      Enquire About Live Wedding Painting
+    </h2>
+    <p class="text-lg text-gray-700 font-body mb-8">
+      If you feel drawn to this style of artwork and would like to explore whether it's the right fit for your wedding day, I'd love to hear from you.
+    </p>
+    <p class="text-lg text-gray-700 font-body mb-10">
+      Please use the enquiry form to share a little about your celebration.
+    </p>
+    
+    <Button href="/wedding-enquiry" variant="primary" size="lg">
+      Get in Touch
+    </Button>
+  </section>
+</Layout>

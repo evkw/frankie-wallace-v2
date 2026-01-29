@@ -3,6 +3,7 @@ export interface NavigationItem {
   href: string;
   isExternal?: boolean;
   isActive?: boolean;
+  footerOnly?: boolean;
   subItems?: NavigationItem[];
 }
 
@@ -22,12 +23,17 @@ export interface LinkTreeItem {
 
 
 export const linkTree: LinkTreeItem[] = [
-
   {
-    label: 'View my Licensing Portfolio',
+    label: 'View my Surface Pattern Portfolio',
     copy: 'Discover ready-to-license surface pattern collections for children’s apparel, fabric, and lifestyle brands.',
     href: '/gallery/surfacePattern',
   },
+  {
+    label: 'Live Wedding Painting',
+    copy: 'I create a single, large-scale painting during your wedding, capturing the atmosphere, beauty, and emotion of the day as it unfolds.',
+    href: '/live-wedding-painting',
+  },
+
   {
     label: 'Shop Prints & Wall Decals ',
     copy: 'Bring my hand-painted artwork into your home — nursery wall decals, art prints, and more, available on Etsy.',
@@ -53,7 +59,7 @@ export const navigationConfig: NavigationItem[] = [
     isActive: true
   },
   {
-    label: 'Portfolio',
+    label: 'Surface Patterns',
     href: '/gallery/surfacePattern',
     isActive: true,
     // subItems: [
@@ -78,12 +84,19 @@ export const navigationConfig: NavigationItem[] = [
     label: 'Store',
     href: 'https://www.etsy.com/shop/lovefrankieart',
     isExternal: true,
-    isActive: true
+    isActive: true,
+    footerOnly: true
   },
   {
     label: 'Spoonflower',
     href: 'https://www.spoonflower.com/profiles/frankiewallaceart?sort=new',
     isExternal: true,
+    isActive: true,
+    footerOnly: true
+  },
+  {
+    label: 'Live Wedding Painting',
+    href: '/live-wedding-painting',
     isActive: true
   },
   {
@@ -94,7 +107,8 @@ export const navigationConfig: NavigationItem[] = [
   {
     label: 'Journal',
     href: '/journal',
-    isActive: true
+    isActive: true,
+    footerOnly: true
   },
   {
     label: 'Contact',
@@ -109,6 +123,11 @@ export const navigationConfig: NavigationItem[] = [
       {
         label: 'License Enquiries',
         href: '/licensing',
+        isActive: true
+      },
+      {
+        label: 'Wedding Painting Enquiry',
+        href: '/wedding-enquiry',
         isActive: true
       }
     ]
@@ -158,7 +177,7 @@ export const inactiveRoutes: NavigationItem[] = [
 
 // Helper function to get active routes
 export const getActiveRoutes = (): NavigationItem[] => {
-  return navigationConfig.filter(route => route.isActive);
+  return navigationConfig.filter(route => route.isActive && route.footerOnly !== true);
 };
 
 // Helper function to get all routes (active and inactive)

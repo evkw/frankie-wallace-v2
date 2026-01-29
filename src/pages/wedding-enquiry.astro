@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout>
+  <div class="bg-gray-50 flex flex-col items-center justify-center min-h-[80vh] py-10">
+    <div class="text-center mb-8 px-4">
+      <h1 class="text-4xl font-bold font-header text-gray-900 mb-4">
+        Wedding Painting Enquiry
+      </h1>
+      <p class="text-lg text-gray-700 font-body max-w-2xl mx-auto mb-2">
+        If you feel drawn to this style of artwork and would like to explore whether it's the right fit for your wedding day, I'd love to hear from you.
+      </p>
+      <p class="text-base text-gray-600 font-body max-w-2xl mx-auto mb-3">
+        Please share a little about your celebration below.
+      </p>
+      <p class="text-base text-gray-900 font-body max-w-2xl mx-auto">
+        📍 <span class="font-semibold">Based in Sydney, Australia</span> — Available for weddings across Australia
+      </p>
+    </div>
+    
+    <!-- Wedding Enquiry Form -->
+    <form 
+      action="https://formspree.io/f/xlgnjnbp" 
+      method="POST" 
+      class="space-y-6 max-w-xl w-full font-body bg-white p-8 rounded-lg shadow-md mx-4"
+    >
+      <div>
+        <label for="name" class="block font-medium text-gray-900 mb-2">
+          Name <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="text" 
+          name="name" 
+          id="name" 
+          required 
+          class="w-full border border-gray-300 rounded px-4 py-3 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block font-medium text-gray-900 mb-2">
+          Email <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          required 
+          class="w-full border border-gray-300 rounded px-4 py-3 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+        />
+      </div>
+
+      <div>
+        <label for="phone" class="block font-medium text-gray-900 mb-2">
+          Phone Number <span class="text-gray-500 text-sm">(optional)</span>
+        </label>
+        <input 
+          type="tel" 
+          name="phone" 
+          id="phone" 
+          class="w-full border border-gray-300 rounded px-4 py-3 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+        />
+      </div>
+
+      <div>
+        <label for="wedding-date" class="block font-medium text-gray-900 mb-2">
+          Wedding Date <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="date" 
+          name="wedding-date" 
+          id="wedding-date" 
+          required 
+          class="w-full border border-gray-300 rounded px-4 py-3 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+        />
+      </div>
+
+      <div>
+        <label for="venue" class="block font-medium text-gray-900 mb-2">
+          Wedding Venue <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="text" 
+          name="venue" 
+          id="venue" 
+          required 
+          placeholder="e.g., Byron Bay, NSW or venue name and location"
+          class="w-full border border-gray-300 rounded px-4 py-3 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block font-medium text-gray-900 mb-2">
+          Additional Details <span class="text-gray-500 text-sm">(optional)</span>
+        </label>
+        <textarea 
+          name="message" 
+          id="message" 
+          rows="6" 
+          placeholder="Share any details about your vision, preferred style, or questions you may have..."
+          class="w-full border border-gray-300 rounded px-4 py-3 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+        ></textarea>
+      </div>
+
+      <Button type="submit" class="w-full">
+        Submit Enquiry
+      </Button>
+    </form>
+  </div>
+</Layout>
