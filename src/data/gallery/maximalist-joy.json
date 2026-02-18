@@ -1,0 +1,37 @@
+{
+  "id": "maximalist-joy",
+  "title": "Maximalist Joy",
+  "description": "Maximalist Joy is a collection of bold, maximalist seamless repeat pattern designs for kidswear, decor, wallpaper, stationery, women's apparel and more. Featuring colours: bright pink, yellow, peach, orange, blue. Lemons, geometric shapes, stripes, swirls, zig-zags, swirls. And a strawberry placement print.",
+  "image": {
+    "src": "/images/maximalist-joy/maximalist-joy-main.webp",
+    "alt": "maximalist-joy Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/maximalist-joy/maximalist-joy-1.webp",
+      "alt": "maximalist-joy Pattern 1"
+    },
+    {
+      "src": "/images/maximalist-joy/maximalist-joy-2.webp",
+      "alt": "maximalist-joy Pattern 2"
+    },
+    {
+      "src": "/images/maximalist-joy/maximalist-joy-3.webp",
+      "alt": "maximalist-joy Pattern 3"
+    },
+    {
+      "src": "/images/maximalist-joy/maximalist-joy-4.webp",
+      "alt": "maximalist-joy Pattern 4"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "Geometric",
+    "abstract",
+    "Watercolour"
+  ],
+  "tags": ["Bright", "maximalist"],
+  "protected": false,
+  "dateCreated": "2026-02-18T23:46:47.521Z"
+}
