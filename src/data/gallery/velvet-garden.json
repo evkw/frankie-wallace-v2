@@ -1,0 +1,38 @@
+{
+  "id": "velvet-garden",
+  "title": "The Velvet Garden",
+  "description": "The Velvet Garden is a romantic, heirloom-style pattern collection inspired by old gardens, antique wallpapers, and storybook florals. Rich colours and flowing hand-painted motifs create a sense of quiet luxury and timeless charm, suited to children’s brands, wallpaper, and premium textile applications.",
+  "image": {
+    "src": "/images/velvet-garden/velvet-garden-main.webp",
+    "alt": "velvet-garden Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/velvet-garden/velvet-garden-1.webp",
+      "alt": "velvet-garden Pattern 1"
+    },
+    {
+      "src": "/images/velvet-garden/velvet-garden-2.webp",
+      "alt": "velvet-garden Pattern 2"
+    },
+    {
+      "src": "/images/velvet-garden/velvet-garden-3.webp",
+      "alt": "velvet-garden Pattern 3"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "trailing floral",
+    "damask",
+    "Watercolour"
+  ],
+  "tags": [
+    "Jacobean floral",
+    "moody",
+    "damask",
+    "heirloom"
+  ],
+  "protected": false,
+  "dateCreated": "2026-02-18T23:38:02.946Z"
+}

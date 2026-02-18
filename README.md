@@ -87,16 +87,22 @@ node scripts/prepare-images.js --folder=spring-flowers --id=spring-flowers
 node scripts/prepare-images.js --folder=roses --id=hydrangea-roses --main=rose-main.jpg --quality=90
 ```
 
-**Full metadata customization:**
-```sh
-node scripts/prepare-images.js \
-  --folder=autumn \
-  --id=oxford-autumn \
-  --title="Oxford Autumn Collection" \
-  --description="Warm autumn leaves and cozy scenes" \
-  --category=surfacePattern \
-  --techniques="Watercolour,Hand-drawn,Seasonal" \
+**Full metadata customization (PowerShell):**
+```powershell
+node scripts/prepare-images.js `
+  --folder=autumn `
+  --inputDir="C:\" `
+  --id=oxford-autumn `
+  --title="Oxford Autumn Collection" `
+  --description="Warm autumn leaves and cozy scenes" `
+  --category=surfacePattern `
+  --techniques="Watercolour,Hand-drawn,Seasonal" `
   --tags="autumn,leaves,orange,warm"
+```
+
+Or, use a single line:
+```sh
+node scripts/prepare-images.js --folder=autumn --inputDir="C:\" --id=oxford-autumn --title="Oxford Autumn Collection" --description="Warm autumn leaves and cozy scenes" --category=surfacePattern --techniques="Watercolour,Hand-drawn,Seasonal" --tags="autumn,leaves,orange,warm"
 ```
 
 **Resize images while converting:**
@@ -106,18 +112,40 @@ node scripts/prepare-images.js --folder=large-images --id=gallery --width=2000 -
 
 ### Output
 
-The script creates:
-- A folder named after the `--id` in the current directory
-- WebP images named `{id}-main.webp` and `{id}-1.webp`, `{id}-2.webp`, etc.
-- A JSON file `{id}.json` with gallery metadata
+
+### Output
+
+- WebP images are saved to `public/images/{id}/` as `{id}-main.webp`, `{id}-1.webp`, `{id}-2.webp`, etc.
+- A JSON file `{id}.json` is saved to `src/data/gallery/` with gallery metadata.
+
+**Supported input formats:** `.jpg`, `.jpeg`, `.png`, `.avif`, `.webp`, `.tif`
+
+**JSON fields generated:**
+
+- `id`: Gallery ID
+- `title`: Gallery title
+- `description`: Gallery description
+- `image`: Main image object (`src`, `alt`)
+- `additionalImages`: Array of additional image objects (`src`, `alt`)
+- `category`: Gallery category
+- `license`: License type
+- `techniques`: Array of techniques
+- `tags`: Array of tags
+- `protected`: Always `false` by default
+- `dateCreated`: ISO date string when the gallery was generated
+
 
 ### Workflow
 
-1. Place your images in a folder (e.g., `./images_in/my-collection/`)
-2. Run the script with appropriate options
-3. Move the generated folder to `public/images/`
-4. Move the JSON file to `src/data/gallery/`
-5. Update the JSON description and metadata as needed
+1. Place your images in a folder (e.g., `./images_in/my-collection/`).
+2. Run the script with appropriate options.
+3. The script will automatically output images to `public/images/{id}/` and the JSON file to `src/data/gallery/`.
+4. Update the generated JSON description and metadata as needed.
+
+**Notes:**
+- If `--main` is not specified, the first image in the folder is used as the main image.
+- The `protected` field is always set to `false` by default.
+- The `dateCreated` field is set to the current date/time when the script is run.
 
 ## 👀 Want to learn more?
 
