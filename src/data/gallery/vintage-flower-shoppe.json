@@ -1,0 +1,38 @@
+{
+  "id": "vintage-flower-shoppe",
+  "title": "Vintage Flower Shoppe",
+  "description": "A soft vintage floral collection featuring delicate hand-painted blooms. Comprises a directional hero floral reminiscent of pressed florals, a cosy floristry ephemera print, and a botanical stripe blender: a perfect trio for children’s apparel, bedding, and organic home textiles.",
+  "image": {
+    "src": "/images/vintage-flower-shoppe/vintage-flower-shoppe-main.webp",
+    "alt": "vintage-flower-shoppe Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/vintage-flower-shoppe/vintage-flower-shoppe-1.webp",
+      "alt": "vintage-flower-shoppe Pattern 1"
+    },
+    {
+      "src": "/images/vintage-flower-shoppe/vintage-flower-shoppe-2.webp",
+      "alt": "vintage-flower-shoppe Pattern 2"
+    },
+    {
+      "src": "/images/vintage-flower-shoppe/vintage-flower-shoppe-3.webp",
+      "alt": "vintage-flower-shoppe Pattern 3"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "hand drawn",
+    "millefleur",
+    "directional",
+    "vintage",
+    "cottagecore",
+    "ephemera",
+    "floral",
+    "watercolour"
+  ],
+  "tags": [],
+  "protected": false,
+  "dateCreated": "2026-02-18T23:49:46.769Z"
+}
