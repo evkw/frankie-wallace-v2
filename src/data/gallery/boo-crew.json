@@ -1,0 +1,33 @@
+{
+  "id": "boo-crew",
+  "title": "The Boo Crew",
+  "description": "Fun, cute Halloween surface pattern prints for kidswear, babywear, home decor, nursery decor, apparel, stationery and more",
+  "image": {
+    "src": "/images/boo-crew/boo-crew-main.webp",
+    "alt": "boo-crew Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/boo-crew/boo-crew-1.webp",
+      "alt": "boo-crew Pattern 1"
+    },
+    {
+      "src": "/images/boo-crew/boo-crew-2.webp",
+      "alt": "boo-crew Pattern 2"
+    },
+    {
+      "src": "/images/boo-crew/boo-crew-3.webp",
+      "alt": "boo-crew Pattern 3"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "Hand-drawn",
+    "placement print",
+    "Watercolour"
+  ],
+  "tags": ["Halloween", "cute", "fun", "kids"],
+  "protected": false,
+  "dateCreated": "2026-02-18T23:43:35.016Z"
+}
