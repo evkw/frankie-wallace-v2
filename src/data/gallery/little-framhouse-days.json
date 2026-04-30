@@ -1,0 +1,37 @@
+{
+  "id": "little-framhouse-days",
+  "title": "Little Framhouse Days",
+  "description": "Watercolour, hand drawn cosy and whimsical vintage cottagecore meadow floral and farmhouse animals, pattern collection, featuring chickens, sunflowers, ditsy and gingham coordinate patterns.",
+  "image": {
+    "src": "/images/little-framhouse-days/little-framhouse-days-main.webp",
+    "alt": "little-framhouse-days Pattern"
+  },
+  "additionalImages": [
+    {
+      "src": "/images/little-framhouse-days/little-framhouse-days-1.webp",
+      "alt": "little-framhouse-days Pattern 1"
+    },
+    {
+      "src": "/images/little-framhouse-days/little-framhouse-days-2.webp",
+      "alt": "little-framhouse-days Pattern 2"
+    },
+    {
+      "src": "/images/little-framhouse-days/little-framhouse-days-3.webp",
+      "alt": "little-framhouse-days Pattern 3"
+    },
+    {
+      "src": "/images/little-framhouse-days/little-framhouse-days-4.webp",
+      "alt": "little-framhouse-days Pattern 4"
+    }
+  ],
+  "category": "surfacePattern",
+  "license": "non-exclusive",
+  "techniques": [
+    "Hand-drawn",
+    "Floral",
+    "Watercolour"
+  ],
+  "tags": [],
+  "protected": false,
+  "dateCreated": "2026-04-30T09:11:23.246Z"
+}
