@@ -28,11 +28,7 @@ export const linkTree: LinkTreeItem[] = [
     copy: 'Discover ready-to-license surface pattern collections for children’s apparel, fabric, and lifestyle brands.',
     href: '/gallery/surfacePattern',
   },
-  {
-    label: 'Live Wedding Painting',
-    copy: 'I create a single, large-scale painting during your wedding, capturing the atmosphere, beauty, and emotion of the day as it unfolds.',
-    href: '/live-wedding-painting',
-  },
+
 
   {
     label: 'Shop Prints & Wall Decals ',
@@ -94,11 +90,7 @@ export const navigationConfig: NavigationItem[] = [
     isActive: true,
     footerOnly: true
   },
-  {
-    label: 'Live Wedding Painting',
-    href: '/live-wedding-painting',
-    isActive: true
-  },
+
   {
     label: 'About',
     href: '/about',
