@@ -133,13 +133,13 @@ import Button from "../components/Button.astro";
     imageWrappers.forEach(wrapper => {
       wrapper.addEventListener('click', () => {
         const img = wrapper.querySelector('.portfolio-image');
-        if (img) {
-          modalImage.src = img.src;
-          modalImage.alt = img.alt;
-          modal.classList.remove('hidden');
-          modal.classList.add('flex');
-          document.body.style.overflow = 'hidden';
-        }
+        // if (img) {
+        //   modalImage.src = img.src;
+        //   modalImage.alt = img.alt;
+        //   modal.classList.remove('hidden');
+        //   modal.classList.add('flex');
+        //   document.body.style.overflow = 'hidden';
+        // }
       });
     });
 

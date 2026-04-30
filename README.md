@@ -147,6 +147,56 @@ node scripts/prepare-images.js --folder=large-images --id=gallery --width=2000 -
 - The `protected` field is always set to `false` by default.
 - The `dateCreated` field is set to the current date/time when the script is run.
 
-## 👀 Want to learn more?
+## �️ Sample Portfolio Script
+
+The `scripts/add-samples.js` script converts images to WebP and adds them to the sample portfolio page. It appends to the existing `sample-portfolio.json` so you can run it multiple times.
+
+### Basic Usage
+
+```sh
+node scripts/add-samples.js ./path/to/folder
+```
+
+### Examples
+
+**Add images from a folder on your desktop:**
+```sh
+node scripts/add-samples.js "C:\Users\Me\Desktop\client-samples"
+```
+
+**Add images with custom quality:**
+```sh
+node scripts/add-samples.js ./my-photos --quality=90
+```
+
+**Resize large images while adding:**
+```sh
+node scripts/add-samples.js ./my-photos --width=2000 --height=2000
+```
+
+**Add from a second folder later (appends, doesn't overwrite):**
+```sh
+node scripts/add-samples.js ./more-photos
+```
+
+### Command-Line Options
+
+| Option | Alias | Description | Default |
+| :--- | :--- | :--- | :--- |
+| `--inputDir` | `--input` | Input directory (or pass as first argument) | _(required)_ |
+| `--quality` | `--q` | WebP quality (0-100) | `80` |
+| `--width` | | Max width (preserves aspect ratio) | No limit |
+| `--height` | | Max height (preserves aspect ratio) | No limit |
+
+### Output
+
+- WebP images saved to `public/images/sample-portfolio/` as `sample-1.webp`, `sample-2.webp`, etc.
+- Entries appended to `src/data/sample-portfolio/sample-portfolio.json`
+- `alt` text is auto-generated from the original filename
+- `description` is left blank for you to fill in later
+
+**Supported input formats:** `.jpg`, `.jpeg`, `.png`, `.avif`, `.webp`, `.tif`, `.tiff`
+
+## �👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

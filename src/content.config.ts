@@ -35,6 +35,16 @@ const galleryScehma = z.object({
 });
 
 
+const samplePortfolioSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  images: z.array(z.object({
+    src: z.string(),
+    alt: z.string(),
+    description: z.string(),
+  })),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/data/blog" }),
   schema: postSchema
@@ -45,10 +55,17 @@ const gallery = defineCollection({
   schema: galleryScehma
 });
 
+const samplePortfolio = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: "./src/data/sample-portfolio" }),
+  schema: samplePortfolioSchema
+});
+
 export const collections = {
   gallery,
-  blog
+  blog,
+  samplePortfolio
 }; 
 
 export type PostSchema = z.infer<typeof postSchema>;
 export type ProjectSchema = z.infer<typeof galleryScehma>;
+export type SamplePortfolioSchema = z.infer<typeof samplePortfolioSchema>;

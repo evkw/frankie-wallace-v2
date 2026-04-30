@@ -1,0 +1,191 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageTitle from "../components/PageTitle.astro";
+import { getCollection } from "astro:content";
+
+const portfolioItems = await getCollection("samplePortfolio");
+const images = portfolioItems.flatMap((item) => item.data.images);
+---
+
+<Layout>
+  <div class="bg-gray-50 min-h-screen">
+    <PageTitle pageTitle="Sample Portfolio">
+      <p class="mt-6 mb-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto font-body">
+        A curated selection of work samples.
+      </p>
+    </PageTitle>
+
+    <!-- Gallery Grid -->
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      {images.length === 0 ? (
+        <p class="text-center text-gray-500 text-lg">No images added yet.</p>
+      ) : (
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          {images.map((image, index) => (
+            <button
+              type="button"
+              class="group relative aspect-square overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+              data-lightbox-trigger
+              data-index={index}
+              data-src={image.src}
+              data-alt={image.alt}
+              data-description={image.description}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- Lightbox Overlay -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image viewer"
+  >
+    <!-- Close button -->
+    <button
+      id="lightbox-close"
+      type="button"
+      class="absolute top-4 right-4 z-10 rounded-full bg-white/20 p-2 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+      aria-label="Close image viewer"
+    >
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Previous button (desktop only, overlaid on sides) -->
+    <button
+      id="lightbox-prev-desktop"
+      type="button"
+      class="hidden sm:block absolute left-4 z-10 rounded-full bg-white/20 p-2 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+      aria-label="Previous image"
+    >
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <!-- Next button (desktop only, overlaid on sides) -->
+    <button
+      id="lightbox-next-desktop"
+      type="button"
+      class="hidden sm:block absolute right-4 z-10 rounded-full bg-white/20 p-2 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+      aria-label="Next image"
+    >
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <!-- Image container -->
+    <div class="flex flex-col items-center max-h-full max-w-full">
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-h-[70vh] sm:max-h-[80vh] max-w-full object-contain rounded-lg"
+      />
+      <p id="lightbox-desc" class="mt-3 text-white text-center text-sm sm:text-base max-w-xl"></p>
+
+      <!-- Mobile nav buttons (below image) -->
+      <div class="flex sm:hidden items-center gap-6 mt-4">
+        <button
+          id="lightbox-prev-mobile"
+          type="button"
+          class="rounded-full bg-white/20 p-3 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+          aria-label="Previous image"
+        >
+          <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          id="lightbox-next-mobile"
+          type="button"
+          class="rounded-full bg-white/20 p-3 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+          aria-label="Next image"
+        >
+          <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const lightbox = document.getElementById('lightbox')!;
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxDesc = document.getElementById('lightbox-desc')!;
+  const closeBtn = document.getElementById('lightbox-close')!;
+  const prevBtns = [
+    document.getElementById('lightbox-prev-desktop')!,
+    document.getElementById('lightbox-prev-mobile')!,
+  ];
+  const nextBtns = [
+    document.getElementById('lightbox-next-desktop')!,
+    document.getElementById('lightbox-next-mobile')!,
+  ];
+  const triggers = document.querySelectorAll<HTMLElement>('[data-lightbox-trigger]');
+
+  let currentIndex = 0;
+  const images = Array.from(triggers).map((el) => ({
+    src: el.dataset.src!,
+    alt: el.dataset.alt!,
+    description: el.dataset.description!,
+  }));
+
+  function showImage(index: number) {
+    currentIndex = ((index % images.length) + images.length) % images.length;
+    const img = images[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxDesc.textContent = img.description;
+  }
+
+  function openLightbox(index: number) {
+    showImage(index);
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      openLightbox(Number(trigger.dataset.index));
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtns.forEach((btn) => btn.addEventListener('click', () => showImage(currentIndex - 1)));
+  nextBtns.forEach((btn) => btn.addEventListener('click', () => showImage(currentIndex + 1)));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  });
+</script>

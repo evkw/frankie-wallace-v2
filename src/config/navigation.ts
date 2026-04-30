@@ -97,6 +97,11 @@ export const navigationConfig: NavigationItem[] = [
     isActive: true
   },
   {
+    label: 'Sample Portfolio',
+    href: '/sample-portfolio',
+    isActive: true
+  },
+  {
     label: 'Journal',
     href: '/journal',
     isActive: true,
