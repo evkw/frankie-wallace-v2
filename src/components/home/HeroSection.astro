@@ -2,6 +2,7 @@
 // HeroSection component for the main banner
 import { Image } from "astro:assets";
 import heroBgImage from "../../data/images/hero-bg.jpeg";
+import logoImage from "../../data/images/Frankie-logo-dark.avif";
 ---
 
 <section
@@ -16,33 +17,34 @@ import heroBgImage from "../../data/images/hero-bg.jpeg";
   />
 
   <!-- Overlay -->
-  <div class="absolute inset-0 bg-olive/60 z-0"></div>
+  <div class="absolute inset-0 bg-olive/10 z-0"></div>
   <div
     class="relative z-10 px-6 py-10 max-w-4xl mx-auto flex flex-col items-center"
   >
+    <Image
+      src={logoImage}
+      alt="Frankie Wallace"
+      class="h-24 sm:h-32 w-auto mb-4"
+    />
 
     <p class="mt-4 text-lg text-cream font-body">
-      Hand-painted illustrations and surface pattern collections
+      Hand-painted illustrations and surface pattern design
     </p>
 
     <div class="flex gap-8">
       <a
         href="/gallery/surfacePattern"
-        class="mt-8 inline-block bg-cream text-olive font-semibold px-6 py-3 rounded shadow hover:bg-blush transition"
+        class="mt-4 inline-block bg-cream text-olive font-semibold px-6 py-2 rounded shadow hover:bg-blush transition"
       >
         Explore Pattern Collections
       </a>
 
       <a
         href="/licensing"
-        class="mt-8 inline-block bg-cream text-olive font-semibold px-6 py-3 rounded shadow hover:bg-blush transition"
+        class="mt-4 inline-block bg-cream text-olive font-semibold px-6 py-2 rounded shadow hover:bg-blush transition"
       >
         Enquire about Licensing
       </a>
     </div>
-
-    <p class="mt-16 text-md text-cream font-body italic">
-      Hand-painted surface pattern design • Ready-to-print files • Non-exclusive & exclusive licensing
-    </p>
   </div>
 </section>
