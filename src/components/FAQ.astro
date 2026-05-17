@@ -26,7 +26,7 @@ const faqs = [
 <section class="py-16 sm:py-24">
   <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+      <h2 class="text-3xl font-bold text-text sm:text-4xl">
         Frequently Asked Questions
       </h2>
       <!-- <p class="mt-4 text-lg text-gray-600">
@@ -36,18 +36,18 @@ const faqs = [
 
     <div class="space-y-4">
       {faqs.map((faq, index) => (
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <div class="border border-blush rounded-lg overflow-hidden">
           <button
             type="button"
-            class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors"
+            class="faq-question w-full flex justify-between items-center p-6 text-left bg-cream hover:bg-blush transition-colors"
             aria-expanded="false"
             data-faq-index={index}
           >
-            <span class="text-lg font-semibold text-gray-900 pr-8">
+            <span class="text-lg font-semibold text-text pr-8">
               {faq.question}
             </span>
             <svg
-              class="faq-icon h-6 w-6 text-gray-500 transition-transform duration-200 flex-shrink-0"
+              class="faq-icon h-6 w-6 text-sage transition-transform duration-200 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -64,7 +64,7 @@ const faqs = [
             class="faq-answer overflow-hidden transition-all duration-200 ease-in-out max-h-0"
             data-faq-content={index}
           >
-            <div class="p-6 pt-0 text-gray-600 leading-relaxed">
+            <div class="p-6 pt-0 text-olive leading-relaxed">
               {faq.answer}
             </div>
           </div>

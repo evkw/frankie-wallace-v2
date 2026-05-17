@@ -14,22 +14,22 @@ const { title, subtitle, image, imageAlt = "", viewMoreLink } = Astro.props;
 ---
 
 <div class="relative h-full">
-  <div class="absolute inset-px rounded-lg bg-white"></div>
+  <div class="absolute inset-px rounded-lg bg-cream"></div>
   <div
     class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] justify-between"
   >
     <div class="px-8 pt-8 sm:px-10 sm:pt-10">
       <p
-        class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
+        class="mt-2 text-lg font-medium tracking-tight text-text max-lg:text-center"
       >
         {title}
       </p>
-      <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+      <p class="mt-2 max-w-lg text-sm/6 text-olive max-lg:text-center">
         {subtitle}
       </p>
       <a
         href={viewMoreLink}
-        class="bg-black text-white font-semibold px-6 py-2 my-6 rounded hover:bg-gray-800 transition block mx-auto text-center"
+        class="bg-olive text-cream font-semibold px-6 py-2 my-6 rounded hover:bg-olive/90 transition block mx-auto text-center"
       >
         View More
       </a>
@@ -43,7 +43,7 @@ const { title, subtitle, image, imageAlt = "", viewMoreLink } = Astro.props;
     </div>
   </div>
   <div
-    class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5"
+    class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-olive/5"
   >
   </div>
 </div>

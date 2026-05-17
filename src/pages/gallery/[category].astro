@@ -49,24 +49,24 @@ const pageTitle =
 ---
 
 <Layout>
-  <div class="bg-gray-50 min-h-screen">
+  <div class="bg-blush min-h-screen">
     <!-- Hero Section -->
 
     <PageTitle pageTitle={pageTitle}>
       <p
-        class="mt-6 mb-6 text-2xl leading-8 text-gray-600 max-w-3xl mx-auto font-body"
+        class="mt-6 mb-6 text-2xl leading-8 text-olive max-w-3xl mx-auto font-body"
       >
         Ready-to-license designs blending storybook nostalgia with modern
         simplicity to add warmth and distinction to your product line.
       </p>
 
-      <p class="text-base text-gray-700 font-body mb-6 max-w-3xl mx-auto">
+      <p class="text-base text-olive font-body mb-6 max-w-3xl mx-auto">
         Each design begins as a hand-painted watercolour, crafted to help brands
         connect emotionally with their audience and stand out in a digital
         world.
       </p>
 
-      <p class="text-base text-gray-700 font-body max-w-3xl mx-auto mb-6">
+      <p class="text-base text-olive font-body max-w-3xl mx-auto mb-6">
         All collections are available for non-exclusive licensing, and I also
         welcome exclusive collaborations and custom design projects.
       </p>
@@ -76,7 +76,7 @@ const pageTitle =
       >
         <Button
           href="/licensing"
-          class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+          class="bg-olive text-cream px-8 py-3 rounded-lg font-semibold hover:bg-olive/90 transition-colors"
         >
           Work with me
         </Button>
@@ -91,13 +91,13 @@ const pageTitle =
           items.map((item) => (
             <a
               href={`/gallery-item/${item.id}`}
-              class="group block bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer overflow-hidden"
+              class="group block bg-cream rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer overflow-hidden"
               data-protected-link={Boolean(item.data.protected) ? 'true' : 'false'}
               data-item-id={item.id}
             >
               <div class="relative aspect-square overflow-hidden">
                 {Boolean(item.data.protected) && (
-                  <div data-protected="true" class="absolute top-2 right-2 z-10 flex items-center gap-2 rounded-full bg-amber-100/90 text-amber-800 px-3 py-1 text-xs font-semibold shadow-sm">
+                  <div data-protected="true" class="absolute top-2 right-2 z-10 flex items-center gap-2 rounded-full bg-rose/20 text-olive px-3 py-1 text-xs font-semibold shadow-sm">
                     <svg
                       class="h-4 w-4"
                       viewBox="0 0 24 24"
@@ -123,10 +123,10 @@ const pageTitle =
                 />
               </div>
               <div class="p-4">
-                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
+                <h3 class="text-lg font-semibold text-text group-hover:text-olive transition-colors">
                   {item.data.title}
                 </h3>
-                <div class="mt-2 flex items-center text-sm text-gray-500">
+                <div class="mt-2 flex items-center text-sm text-olive">
                   <span data-protected-text>
                     {Boolean(item.data.protected)
                       ? "You must be a member to view"
@@ -156,7 +156,7 @@ const pageTitle =
       {
         items.length === 0 && (
           <div class="text-center py-12">
-            <div class="mx-auto h-24 w-24 text-gray-300">
+            <div class="mx-auto h-24 w-24 text-sage">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
@@ -166,10 +166,10 @@ const pageTitle =
                 />
               </svg>
             </div>
-            <h3 class="mt-4 text-lg font-medium text-gray-900">
+            <h3 class="mt-4 text-lg font-medium text-text">
               No illustrations found
             </h3>
-            <p class="mt-2 text-gray-500">
+            <p class="mt-2 text-olive">
               Try a different gallery type or check back later.
             </p>
           </div>

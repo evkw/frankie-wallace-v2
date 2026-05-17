@@ -21,9 +21,9 @@ const {
 const baseClasses = "font-semibold rounded transition-all duration-300 block text-center relative overflow-hidden";
 
 const variantClasses = {
-  primary: "bg-black text-black hover:bg-gray-800",
-  secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
-  outline: "border border-gray-300 text-gray-700 hover:bg-gray-50"
+  primary: "bg-olive text-cream hover:bg-olive/90",
+  secondary: "bg-blush text-text hover:bg-rose/30",
+  outline: "border border-sage text-olive hover:bg-blush"
 };
 
 const sizeClasses = {
@@ -67,11 +67,11 @@ const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} 
 </style>
 
 {href ? (
-  <a href={href} class={`${classes} text-white`}>
+  <a href={href} class={`${classes} text-cream`}>
     <slot />
   </a>
 ) : (
-  <button type={type} class={`${classes} text-white`}>
+  <button type={type} class={`${classes} text-cream`}>
    <slot />
   </button>
 )} 

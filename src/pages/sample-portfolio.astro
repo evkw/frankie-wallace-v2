@@ -8,9 +8,9 @@ const images = portfolioItems.flatMap((item) => item.data.images);
 ---
 
 <Layout>
-  <div class="bg-gray-50 min-h-screen">
+  <div class="bg-blush min-h-screen">
     <PageTitle pageTitle="Sample Portfolio">
-      <p class="mt-6 mb-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto font-body">
+      <p class="mt-6 mb-6 text-xl leading-8 text-olive max-w-3xl mx-auto font-body">
         A curated selection of work samples.
       </p>
     </PageTitle>
@@ -18,13 +18,13 @@ const images = portfolioItems.flatMap((item) => item.data.images);
     <!-- Gallery Grid -->
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       {images.length === 0 ? (
-        <p class="text-center text-gray-500 text-lg">No images added yet.</p>
+        <p class="text-center text-olive text-lg">No images added yet.</p>
       ) : (
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {images.map((image, index) => (
             <button
               type="button"
-              class="group relative aspect-square overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+              class="group relative aspect-square overflow-hidden rounded-lg bg-cream shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage"
               data-lightbox-trigger
               data-index={index}
               data-src={image.src}
@@ -47,7 +47,7 @@ const images = portfolioItems.flatMap((item) => item.data.images);
   <!-- Lightbox Overlay -->
   <div
     id="lightbox"
-    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-olive/80 backdrop-blur-sm p-4"
     role="dialog"
     aria-modal="true"
     aria-label="Image viewer"
@@ -56,7 +56,7 @@ const images = portfolioItems.flatMap((item) => item.data.images);
     <button
       id="lightbox-close"
       type="button"
-      class="absolute top-4 right-4 z-10 rounded-full bg-white/20 p-2 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+      class="absolute top-4 right-4 z-10 rounded-full bg-cream/20 p-2 text-cream hover:bg-cream/40 transition-colors focus:outline-none focus:ring-2 focus:ring-cream"
       aria-label="Close image viewer"
     >
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -68,7 +68,7 @@ const images = portfolioItems.flatMap((item) => item.data.images);
     <button
       id="lightbox-prev-desktop"
       type="button"
-      class="hidden sm:block absolute left-4 z-10 rounded-full bg-white/20 p-2 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+      class="hidden sm:block absolute left-4 z-10 rounded-full bg-cream/20 p-2 text-cream hover:bg-cream/40 transition-colors focus:outline-none focus:ring-2 focus:ring-cream"
       aria-label="Previous image"
     >
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -80,7 +80,7 @@ const images = portfolioItems.flatMap((item) => item.data.images);
     <button
       id="lightbox-next-desktop"
       type="button"
-      class="hidden sm:block absolute right-4 z-10 rounded-full bg-white/20 p-2 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+      class="hidden sm:block absolute right-4 z-10 rounded-full bg-cream/20 p-2 text-cream hover:bg-cream/40 transition-colors focus:outline-none focus:ring-2 focus:ring-cream"
       aria-label="Next image"
     >
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -96,14 +96,14 @@ const images = portfolioItems.flatMap((item) => item.data.images);
         alt=""
         class="max-h-[70vh] sm:max-h-[80vh] max-w-full object-contain rounded-lg"
       />
-      <p id="lightbox-desc" class="mt-3 text-white text-center text-sm sm:text-base max-w-xl"></p>
+      <p id="lightbox-desc" class="mt-3 text-cream text-center text-sm sm:text-base max-w-xl"></p>
 
       <!-- Mobile nav buttons (below image) -->
       <div class="flex sm:hidden items-center gap-6 mt-4">
         <button
           id="lightbox-prev-mobile"
           type="button"
-          class="rounded-full bg-white/20 p-3 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+          class="rounded-full bg-cream/20 p-3 text-cream hover:bg-cream/40 transition-colors focus:outline-none focus:ring-2 focus:ring-cream"
           aria-label="Previous image"
         >
           <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -113,7 +113,7 @@ const images = portfolioItems.flatMap((item) => item.data.images);
         <button
           id="lightbox-next-mobile"
           type="button"
-          class="rounded-full bg-white/20 p-3 text-white hover:bg-white/40 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+          class="rounded-full bg-cream/20 p-3 text-cream hover:bg-cream/40 transition-colors focus:outline-none focus:ring-2 focus:ring-cream"
           aria-label="Next image"
         >
           <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

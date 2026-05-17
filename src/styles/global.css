@@ -4,7 +4,16 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
+  --color-cream: #F7F2EA;
+  --color-blush: #EFE3DB;
+  --color-sage: #A8B29A;
+  --color-olive: #5E6652;
+  --color-text: #4A403A;
+  --color-rose: #CDAAA3;
+  --color-accent: #CDAAA3;
+}
 
-
-
+body {
+  background-color: var(--color-cream);
+  color: var(--color-text);
 }

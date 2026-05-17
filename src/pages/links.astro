@@ -4,11 +4,11 @@ import { linkTree } from "../config/navigation";
 ---
 
 <Layout hideNav={true}>
-  <div class="min-h-screen bg-gray-50 py-12 px-4">
+  <div class="min-h-screen bg-blush py-12 px-4">
     <div class="max-w-2xl mx-auto">
       <!-- Profile Section -->
       <div class="text-center mb-12">
-        <p class="text-lg text-gray-600 font-body max-w-xl mx-auto">
+        <p class="text-lg text-olive font-body max-w-xl mx-auto">
           Watercolour artist & surface pattern designer creating whimsical
           collections for children's brands and lifestyle products.
         </p>
@@ -22,12 +22,12 @@ import { linkTree } from "../config/navigation";
               href={link.href}
               target={link.href.startsWith("http") ? "_blank" : "_self"}
               rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
-              class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:scale-[1.02] group"
+              class="block bg-cream rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-blush hover:scale-[1.02] group"
             >
-              <h2 class="text-xl font-semibold text-gray-900 font-header mb-2">
+              <h2 class="text-xl font-semibold text-text font-header mb-2">
                 {link.label}
               </h2>
-              <p class="text-gray-600 font-body text-sm leading-relaxed">
+              <p class="text-olive font-body text-sm leading-relaxed">
                 {link.copy}
               </p>
             </a>
@@ -36,7 +36,7 @@ import { linkTree } from "../config/navigation";
       </div>
 
       <!-- Footer -->
-      <div class="text-center mt-12 text-gray-500 text-sm font-body">
+      <div class="text-center mt-12 text-olive text-sm font-body">
         <p>© {new Date().getFullYear()} Frankie Wallace. All rights reserved.</p>
       </div>
     </div>

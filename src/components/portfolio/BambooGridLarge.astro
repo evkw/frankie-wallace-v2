@@ -27,19 +27,19 @@ const {
 ---
 
 <div class="relative lg:row-span-2">
-  <div class={`absolute inset-px rounded-lg bg-white ${isRightSide ? 'max-lg:rounded-b-4xl lg:rounded-r-4xl' : 'lg:rounded-l-4xl'}`}>
+  <div class={`absolute inset-px rounded-lg bg-cream ${isRightSide ? 'max-lg:rounded-b-4xl lg:rounded-r-4xl' : 'lg:rounded-l-4xl'}`}>
   </div>
   <div
     class={`relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] ${isRightSide ? 'max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]' : 'lg:rounded-l-[calc(2rem+1px)]'}`}
   >
     <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
       <p
-        class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
+        class="mt-2 text-lg font-medium tracking-tight text-text max-lg:text-center"
       >
         {title}
       </p>
       <p
-        class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
+        class="mt-2 max-w-lg text-sm/6 text-olive max-lg:text-center"
       >
         {subtitle}
       </p>
@@ -50,7 +50,7 @@ const {
     </div>
       <div class="relative min-h-120 w-full grow">
         <div
-          class="absolute top-10 right-0 bottom-0 overflow-hidden bg-gray-900 shadow-2xl outline outline-white/10"
+          class="absolute top-10 right-0 bottom-0 overflow-hidden bg-olive shadow-2xl outline outline-cream/10"
         >
           <Image
             src={image}
@@ -61,7 +61,7 @@ const {
       </div>
   </div>
   <div
-    class={`pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 ${isRightSide ? 'max-lg:rounded-b-4xl lg:rounded-r-4xl' : 'lg:rounded-l-4xl'}`}
+    class={`pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-olive/5 ${isRightSide ? 'max-lg:rounded-b-4xl lg:rounded-r-4xl' : 'lg:rounded-l-4xl'}`}
   >
   </div>
 </div> 

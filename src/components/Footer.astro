@@ -14,7 +14,7 @@ const navigationItems = getActiveRoutes(true);
 const socialMediaItems = getActiveSocialMedia();
 ---
 
-<footer class="bg-white">
+<footer class="bg-cream">
   <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
     <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
       <!-- Left side with duck image -->
@@ -30,14 +30,14 @@ const socialMediaItems = getActiveSocialMedia();
       <div class="flex-1">
         <nav aria-label="Footer" class="-mb-6 flex flex-wrap justify-center lg:justify-end gap-x-12 gap-y-3 text-sm/6">
           {hideNav ? [] : navigationItems.map((item) => (
-            <a href={item.href} class="text-body text-gray-600 hover:text-gray-900" target={item.isExternal ? '_blank' : undefined} rel={item.isExternal ? 'noopener noreferrer' : undefined}>
+            <a href={item.href} class="text-body text-olive hover:text-text" target={item.isExternal ? '_blank' : undefined} rel={item.isExternal ? 'noopener noreferrer' : undefined}>
               {item.label}
             </a>
           ))}
         </nav>
         <div class="mt-16 flex justify-center lg:justify-end gap-x-10">
           {socialMediaItems.map((social) => (
-            <a href={social.href} class="text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer">
+            <a href={social.href} class="text-olive hover:text-text" target="_blank" rel="noopener noreferrer">
               <span class="sr-only">{social.label}</span>
               <i class={social.icon}></i>
             </a>
@@ -45,7 +45,7 @@ const socialMediaItems = getActiveSocialMedia();
         </div>
       </div>
     </div>
-    <p class="mt-10 text-center text-sm/6 text-gray-600 text-body">&copy; {new Date().getFullYear()} Frankie Wallace. All rights reserved.</p>
+    <p class="mt-10 text-center text-sm/6 text-olive text-body">&copy; {new Date().getFullYear()} Frankie Wallace. All rights reserved.</p>
   </div>
 </footer>
 
