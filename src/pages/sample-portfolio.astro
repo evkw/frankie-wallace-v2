@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PageTitle from "../components/PageTitle.astro";
 import { getCollection } from "astro:content";
 
 const portfolioItems = await getCollection("samplePortfolio");
@@ -9,18 +8,12 @@ const images = portfolioItems.flatMap((item) => item.data.images);
 
 <Layout>
   <div class="bg-blush min-h-screen">
-    <PageTitle pageTitle="Sample Portfolio">
-      <p class="mt-6 mb-6 text-xl leading-8 text-olive max-w-3xl mx-auto font-body">
-        A curated selection of work samples.
-      </p>
-    </PageTitle>
-
     <!-- Gallery Grid -->
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 pt-8 pb-12 sm:px-6 lg:px-8">
       {images.length === 0 ? (
         <p class="text-center text-olive text-lg">No images added yet.</p>
       ) : (
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {images.map((image, index) => (
             <button
               type="button"
