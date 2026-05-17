@@ -121,11 +121,6 @@ export const navigationConfig: NavigationItem[] = [
         label: 'License Enquiries',
         href: '/licensing',
         isActive: true
-      },
-      {
-        label: 'Wedding Painting Enquiry',
-        href: '/wedding-enquiry',
-        isActive: true
       }
     ]
   }
