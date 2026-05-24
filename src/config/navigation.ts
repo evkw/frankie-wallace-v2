@@ -1,6 +1,7 @@
 export interface NavigationItem {
   label: string;
   href: string;
+  location?: 'left' | 'right' | null;
   isExternal?: boolean;
   isActive?: boolean;
   footerOnly?: boolean;
@@ -50,13 +51,9 @@ export const linkTree: LinkTreeItem[] = [
 
 export const navigationConfig: NavigationItem[] = [
   {
-    label: 'Home',
-    href: '/',
-    isActive: true
-  },
-  {
     label: 'Surface Patterns',
     href: '/gallery/surfacePattern',
+    location: 'left',
     isActive: true,
     // subItems: [
     //   {
@@ -79,6 +76,7 @@ export const navigationConfig: NavigationItem[] = [
   {
     label: 'Store',
     href: 'https://www.etsy.com/shop/lovefrankieart',
+    location: null,
     isExternal: true,
     isActive: true,
     footerOnly: true
@@ -86,6 +84,7 @@ export const navigationConfig: NavigationItem[] = [
   {
     label: 'Spoonflower',
     href: 'https://www.spoonflower.com/profiles/frankiewallaceart?sort=new',
+    location: null,
     isExternal: true,
     isActive: true,
     footerOnly: true
@@ -94,22 +93,26 @@ export const navigationConfig: NavigationItem[] = [
   {
     label: 'About',
     href: '/about',
+    location: 'right',
     isActive: true
   },
   {
     label: 'Sample Portfolio',
     href: '/sample-portfolio',
+    location: 'left',
     isActive: true
   },
   {
     label: 'Journal',
     href: '/journal',
+    location: null,
     isActive: true,
     footerOnly: true
   },
   {
     label: 'Contact',
     href: '/contact',
+    location: 'right',
     isActive: true,
     subItems: [
       {

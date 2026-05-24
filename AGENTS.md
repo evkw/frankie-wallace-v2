@@ -25,3 +25,6 @@
 ## Behavior Quirks Worth Preserving
 - Protected gallery access is client-gated via `localStorage.isMember === "true"`; non-members are redirected to `/password` from gallery list/detail pages.
 - `Layout.astro` injects Google Analytics only in production (`import.meta.env.PROD`) but always injects Flodesk script; keep this split intact unless explicitly changing tracking/newsletter behavior.
+
+## Navigation Source Of Truth
+- All navigation logic should start in `src/config/navigation.ts` and use it as the source of truth for route visibility/order/layout metadata.
