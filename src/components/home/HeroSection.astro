@@ -1,7 +1,7 @@
 ---
 // HeroSection component for the main banner
 import { Image } from "astro:assets";
-import heroBgImage from "../../data/images/hero-bg.jpeg";
+import heroBgImage from "../../data/images/hero-bg.jpg";
 import logoImage from "../../data/images/Frankie-logo-dark.avif";
 ---
 
@@ -27,14 +27,20 @@ import logoImage from "../../data/images/Frankie-logo-dark.avif";
       class="h-24 sm:h-32 w-auto mb-4"
     />
 
-    <p class="mt-4 text-lg text-cream font-body">
-      Hand-painted illustrations and surface pattern design
+    <p
+      class="mt-4 text-xl sm:text-2xl text-black font-bold font-heading italic flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4"
+    >
+      <span>Surface Pattern Design</span>
+      <span class="hidden sm:inline" aria-hidden="true">&bull;</span>
+      <span>Illustration</span>
+      <span class="hidden sm:inline" aria-hidden="true">&bull;</span>
+      <span>Children&apos;s Books</span>
     </p>
 
-    <div class="mt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
       <a
         href="/contact"
-        class="inline-block bg-cream text-olive font-semibold px-6 py-2 rounded shadow hover:bg-blush transition"
+        class="inline-block bg-olive text-cream font-semibold px-6 py-3 rounded shadow hover:bg-olive/90 transition"
       >
         Work With Me
       </a>
