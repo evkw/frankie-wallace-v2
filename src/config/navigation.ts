@@ -111,21 +111,9 @@ export const navigationConfig: NavigationItem[] = [
   },
   {
     label: 'Contact',
-    href: '/contact',
+    href: '/licensing',
     location: 'right',
-    isActive: true,
-    subItems: [
-      {
-        label: 'General Enquiries',
-        href: '/contact',
-        isActive: true
-      },
-      {
-        label: 'License Enquiries',
-        href: '/licensing',
-        isActive: true
-      }
-    ]
+    isActive: true
   }
 ];
 
