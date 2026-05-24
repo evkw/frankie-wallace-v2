@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": {
+    "paths": [
+      ".opencode/skills"
+    ]
+  },
+  "command": {
+    "issue-flow": {
+      "description": "Start issue worktree plan-approve-execute flow",
+      "template": "Run the github-issue-worktree-flow skill for issue {{args}}. Resolve the issue details, create or reuse worktree .worktrees/issue-<number> and branch feat/issue-<number>-<slug>, propose a concrete plan, and stop for explicit approval before any file edits."
+    }
+  }
+}
